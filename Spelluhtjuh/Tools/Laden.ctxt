@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Laden
+comment1.params=filename
+comment1.target=java.awt.Image\ laadPlaatje(java.lang.String)
+comment2.params=filename
+comment2.target=java.awt.image.BufferedImage\ laadBufferedPlaatje(java.lang.String)
+comment3.params=width\ height\ transparency
+comment3.target=java.awt.image.VolatileImage\ createVImage(int,\ int,\ int)
+comment4.params=filename
+comment4.target=java.lang.String\ laadTextFile(java.lang.String)
+comment5.params=map\ objectnaam\ level
+comment5.target=int[]\ laadLevelFile(java.lang.String,\ java.lang.String,\ int)
+numComments=6

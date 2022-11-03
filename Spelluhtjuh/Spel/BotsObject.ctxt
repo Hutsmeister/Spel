@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=BotsObject
+comment0.text=\r\n\ Abstract\ class\ BotsObject\r\n\ Wat\ doet\ deze\ klasse?\r\n\r\n\ @author\ Dhr.\ Koldenhof\r\n\ @version\ (V2.0)\r\n\ \r\n\ Deze\ klasse\ mag\ je\ NIET\ veranderen\r\n\ \r\n
+comment1.params=x\ y\ breedte\ hoogte
+comment1.target=BotsObject(int,\ int,\ int,\ int)
+comment2.params=g
+comment2.target=void\ teken(java.awt.Graphics2D)
+comment3.params=stapGrootte
+comment3.target=void\ beweeg(float)
+comment4.params=
+comment4.target=void\ bewaar()
+comment5.params=
+comment5.target=void\ zetxTerug()
+comment6.params=
+comment6.target=void\ zetyTerug()
+comment7.params=ander
+comment7.target=boolean\ botstMet(SpelObject)
+comment8.params=ander
+comment8.target=java.lang.String\ ikKomVan(SpelObject)
+comment9.params=ander
+comment9.target=java.lang.String\ ikKomVan(BotsObject)
+numComments=10

@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SpelObject
+comment0.text=\r\n\ Deze\ klasse\ SpelObject\ is\ de\ basis\ klasse\ voor\ alle\ objecten\ in\ je\ spel\r\n\ Hiervan\ worden\ afgeleid\ (extended)\ \r\n\ PlaatjesObject\r\n\ BeweegObject\r\n\ BotsOject\r\n\r\n\ @author\ (E.E.\ Koldenhof)\r\n\ @version\ (V2.0)\r\n
+comment1.params=x\ y\ breedte\ hoogte
+comment1.target=SpelObject(int,\ int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ SpelObject\r\n\ Voor\ objecten\ van\ dit\ spel\ object\ gebruiken\ alleen\ de\ x,\ y,\ breedte\ en\ hoogte\r\n
+comment2.params=g
+comment2.target=void\ teken(java.awt.Graphics2D)
+numComments=3

@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Tekenaar
+comment0.text=\r\n\ \r\n\ @author\ Dhr.\ Luites\ en\ Dhr.\ Koldenhof\r\n\ \r\n\ Deze\ klasse\ mag\ je\ NIET\ veranderen\r\n\r\n
+comment1.params=
+comment1.target=Tekenaar()
+comment2.params=c
+comment2.target=void\ setBackground(java.awt.Color)
+comment3.params=
+comment3.target=void\ init()
+comment3.text=\r\n\ Start\ de\ Tekenaar.\r\n
+comment4.params=g
+comment4.target=void\ toonDebugInfo(java.awt.Graphics2D)
+comment5.params=o
+comment5.target=void\ voegObjectToe(KanTekenen)
+comment6.params=o
+comment6.target=void\ verwijderObject(KanTekenen)
+comment7.params=lijst
+comment7.target=void\ verwijderLijst(java.util.ArrayList)
+comment8.params=lijst
+comment8.target=void\ voegLijstToe(java.util.ArrayList)
+comment9.params=
+comment9.target=void\ tekenAlles()
+comment9.text=\r\n\ Teken\ all\ TekenObjecten.\r\n
+numComments=10

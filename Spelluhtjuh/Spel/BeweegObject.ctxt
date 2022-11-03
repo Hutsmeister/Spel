@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BeweegObject
+comment0.text=\r\n\ Abstract\ class\ BeweegObject\r\n\ Wat\ doet\ deze\ klasse?\r\n\r\n\ @author\ Dhr.\ Koldenhof\r\n\ @version\ (V2.0)\r\n\ \r\n\ Deze\ klasse\ mag\ je\ NIET\ veranderen\r\n\ \r\n
+comment1.params=x\ y\ breedte\ hoogte
+comment1.target=BeweegObject(int,\ int,\ int,\ int)
+comment2.params=g
+comment2.target=void\ teken(java.awt.Graphics2D)
+comment3.params=stapGrootte
+comment3.target=void\ beweeg(float)
+numComments=4

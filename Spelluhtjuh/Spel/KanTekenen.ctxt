@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=KanTekenen
+comment0.text=\r\n\ interface\ tekenen\ -\ Zorgt\ voor\ eis\ om\ een\ object\ tekenbaar\ te\ maken\ door\ de\ Tekenaar\r\n\r\n\ @author\ (Dhr.\ Koldenhof)\r\n\ @version\ (V1.2)\r\n
+comment1.params=g
+comment1.target=void\ teken(java.awt.Graphics2D)
+comment1.text=\r\n\r\n\ @param\ \ Het\ Graphics2D\ geeft\ het\ object\ waar\ je\ de\ verschillende\r\n\ grafische\ acties\ op\ kan\ toepassen.\r\n\ \ zoals\ fillRect(),\ fillOval(),\ drawImage(),\ setColor(),\ setFont()\ enz.\r\n\ \ \r\n
+numComments=2

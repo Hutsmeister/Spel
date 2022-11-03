@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Omgeving
+comment0.text=\r\n\ In\ deze\ klasse\ maak\ je\ de\ objecten\ die\ de\ omgeving\ van\ het\ spel\ vormen\r\n\ Dat\ kunnen\ enkel\ objecten\ zijn\ \r\n\ Maar\ dat\ kunnen\ ook\ lijsten\ van\ objecten\ zijn\r\n\ Of\ zelfs\ lege\ lijsten\r\n\ Voor\ lijsten\ maken\ we\ gebruik\ van\ de\ ArrayList\r\n\r\n\ @author\ (E.E.Koldenhof)\r\n\ @version\ (V1.0)\r\n
+comment1.params=breedte\ hoogte\ t\ b\ k\ m
+comment1.target=Omgeving(int,\ int,\ Tekenaar,\ Beweeg,\ Tools.Keyboard,\ Tools.Mouse)
+comment1.text=\r\n\ Constructor\ voor\ de\ objecten\ van\ de\ klasse\ Omgeving\r\n\ @param\ breedte,\ is\ de\ breedte\ van\ het\ zichtbare\ spel\r\n
+comment2.params=
+comment2.target=void\ voegAanTekenaarToe()
+comment2.text=\r\n\ Deze\ procedure\ voegt\ de\ gemaakte\ objecten\ aan\ de\r\n\ tekenlijst\ van\ de\ Tekenaar\ toe\:\r\n\ tekenaar.voegObjectToe(een\ gemaakt\ object)\r\n\ tekenaar.voegLijstToe(een\ gemaakte\ en\ gevulde\ lijst)\r\n\r\n
+comment3.params=
+comment3.target=void\ voegAanBeweegToe()
+comment3.text=\r\n\ Deze\ procedure\ voegt\ de\ gemaakte\ objecten\ aan\ de\r\n\ beweeglijst\ van\ Beweeg\ toe\:\r\n\ beweeg.voegObjectToe(een\ gemaakt\ object)\r\n\ beweeg.voegLijstToe(een\ gemaakte\ en\ gevulde\ lijst)\r\n\r\n
+numComments=4

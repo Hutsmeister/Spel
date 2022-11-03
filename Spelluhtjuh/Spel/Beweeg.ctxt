@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Beweeg
+comment0.text=\r\n\ Deze\ klasse\ zorgt\ voor\ de\ dynamica\ van\ het\ spel.\r\n\r\n\ @author\ (E.E.\ Koldenhof)\r\n\ @version\ (V.1.0)\r\n\ \r\n\ Deze\ klasse\ mag\ je\ NIET\ veranderen\r\n\ \r\n
+comment1.params=
+comment1.target=Beweeg()
+comment1.text=\r\n\ Vult\ de\ 4\ basis\ objecten\ die\ de\ controller\ nodig\ heeft\ om\ de\ \r\n\ dynamica\ van\ het\ spel\ te\ kunnen\ afhandelen\r\n
+comment2.params=o
+comment2.target=void\ voegObjectToe(KanBewegen)
+comment3.params=o
+comment3.target=void\ verwijderObject(KanBewegen)
+comment4.params=lijst
+comment4.target=void\ voegLijstToe(java.util.ArrayList)
+comment5.params=lijst
+comment5.target=void\ verwijderLijst(java.util.ArrayList)
+comment6.params=stapGrootte
+comment6.target=void\ beweegAlles(float)
+numComments=7

@@ -1,0 +1,278 @@
+BlueJ run started: Thu Apr 29 09:48:31 CEST 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Detected language "dutch" based on iso639-2 code "nld"
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\VWO5\5.GameDevelopment\Framework2020-21\Framework2021-VWO-Leeg
+1619682514285: Listening for JDWP connection on address: javadebug
+java.io.FileNotFoundException while reading import cache: userhome\bluej\import-cache.xml (Het systeem kan het opgegeven bestand niet vinden)
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Wed May 12 17:19:59 CEST 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\VWO5\5.GameDevelopment\Framework2020-21\Framework2021-VWO-Leeg
+1620832800702: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Thu Jul 29 20:39:37 CEST 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\SoftwareOntwikkeling\Framework2021-22_Try-outs\Framework2021-VWO-Leeg
+1627583981002: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+jul. 29, 2021 8:53:54 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 8:56:05 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+Exception in thread "JavaFX Application Thread" java.lang.IndexOutOfBoundsException: 327 not in [0, 314]
+	at org.reactfx.util.Lists.checkPosition(Lists.java:110)
+	at org.reactfx.util.Lists.checkPosition(Lists.java:105)
+	at org.reactfx.util.FingerTree$NonEmptyFingerTree.locateProgressively(FingerTree.java:51)
+	at org.fxmisc.richtext.model.ReadOnlyStyledDocument$Pos.offsetBy(ReadOnlyStyledDocument.java:545)
+	at org.fxmisc.richtext.model.ReadOnlyStyledDocument.offsetToPosition(ReadOnlyStyledDocument.java:268)
+	at org.fxmisc.richtext.model.GenericEditableStyledDocumentBase.offsetToPosition(GenericEditableStyledDocumentBase.java:132)
+	at org.fxmisc.richtext.model.SimpleEditableStyledDocument.offsetToPosition(SimpleEditableStyledDocument.java:10)
+	at org.fxmisc.richtext.model.StyledDocument.getStyleSpans(StyledDocument.java:105)
+	at bluej.editor.moe.MoeSyntaxDocument.addStyle(MoeSyntaxDocument.java:230)
+	at bluej.editor.moe.MoeEditor.lambda$doBracketMatch$15(MoeEditor.java:2849)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+jul. 29, 2021 9:29:51 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 9:36:33 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 10:23:30 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 10:25:58 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+jul. 29, 2021 11:05:01 P.M. javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/BlueJ/lib/javafx/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+Exception in thread "JavaFX Application Thread" java.util.NoSuchElementException
+	at java.base/java.util.LinkedList$ListItr.previous(LinkedList.java:909)
+	at bluej.editor.moe.BlueJSyntaxView.reassessIndentsAdd(BlueJSyntaxView.java:1287)
+	at bluej.editor.moe.BlueJSyntaxView.updateDamage(BlueJSyntaxView.java:1685)
+	at bluej.editor.moe.MoeSyntaxDocument.fireChangedUpdate(MoeSyntaxDocument.java:547)
+	at bluej.editor.moe.MoeSyntaxDocument.fireInsertUpdate(MoeSyntaxDocument.java:861)
+	at bluej.editor.moe.MoeSyntaxDocument.lambda$new$1(MoeSyntaxDocument.java:139)
+	at org.reactfx.util.NonAccumulativeStreamNotifications.lambda$head$0(NotificationAccumulator.java:134)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:68)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:57)
+	at org.reactfx.ProperEventStream.emit(ProperEventStream.java:18)
+	at java.base/java.util.Arrays$ArrayList.forEach(Arrays.java:4390)
+	at org.fxmisc.richtext.model.EditableStyledDocument$1.lambda$observeInputs$0(EditableStyledDocument.java:88)
+	at org.reactfx.util.NonAccumulativeStreamNotifications.lambda$head$0(NotificationAccumulator.java:134)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:68)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:57)
+	at org.reactfx.ProperEventStream.emit(ProperEventStream.java:18)
+	at org.reactfx.FilterStream.lambda$observeInputs$0(FilterStream.java:20)
+	at org.reactfx.util.NonAccumulativeStreamNotifications.lambda$head$0(NotificationAccumulator.java:134)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:68)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:57)
+	at org.reactfx.ProperEventStream.emit(ProperEventStream.java:18)
+	at org.reactfx.MappedStream.lambda$observeInputs$0(MappedStream.java:25)
+	at org.reactfx.util.QueuingStreamNotifications.lambda$head$0(NotificationAccumulator.java:217)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:68)
+	at org.reactfx.SuspendableBase.resume(SuspendableBase.java:64)
+	at org.reactfx.CloseableOnceGuard.close(Guard.java:49)
+	at org.reactfx.MultiGuard.close(Guard.java:83)
+	at org.reactfx.Suspendable$1.resumeSource(Suspendable.java:118)
+	at org.reactfx.Suspendable$1.suspendSource(Suspendable.java:104)
+	at org.reactfx.util.NonAccumulativeStreamNotifications.lambda$head$0(NotificationAccumulator.java:134)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:68)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:57)
+	at org.reactfx.ProperEventStream.emit(ProperEventStream.java:18)
+	at org.reactfx.EventStreams$3.lambda$observeInputs$0(EventStreams.java:105)
+	at org.reactfx.value.ChangeListenerWrapper.accept(Val.java:786)
+	at org.reactfx.util.AbstractReducingStreamNotifications.lambda$head$0(NotificationAccumulator.java:248)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:68)
+	at org.reactfx.ObservableBase.notifyObservers(ObservableBase.java:57)
+	at org.reactfx.value.ValBase.invalidate(ValBase.java:32)
+	at org.reactfx.SuspendableBoolean.release(SuspendableBoolean.java:24)
+	at org.reactfx.CloseableOnceGuard.close(Guard.java:49)
+	at org.reactfx.Suspendable.suspendWhile(Suspendable.java:49)
+	at org.fxmisc.richtext.model.GenericEditableStyledDocumentBase.updateMulti(GenericEditableStyledDocumentBase.java:215)
+	at org.fxmisc.richtext.model.GenericEditableStyledDocumentBase.updateSingle(GenericEditableStyledDocumentBase.java:207)
+	at org.reactfx.util.Tuple3.exec(Tuple3.java:43)
+	at org.fxmisc.richtext.model.GenericEditableStyledDocumentBase.replace(GenericEditableStyledDocumentBase.java:142)
+	at org.fxmisc.richtext.model.SimpleEditableStyledDocument.replace(SimpleEditableStyledDocument.java:10)
+	at org.fxmisc.richtext.GenericStyledArea.replace(GenericStyledArea.java:1195)
+	at org.fxmisc.richtext.GenericStyledArea.replaceText(GenericStyledArea.java:1182)
+	at org.fxmisc.richtext.TextEditingArea.replaceText(TextEditingArea.java:390)
+	at org.fxmisc.richtext.EditActions.replaceSelection(EditActions.java:165)
+	at bluej.editor.moe.MoeActions.lambda$newLineAction$30(MoeActions.java:1503)
+	at bluej.editor.moe.MoeActions$1.actionPerformed(MoeActions.java:1172)
+	at bluej.editor.moe.MoeActions.lambda$updateKeymap$2(MoeActions.java:185)
+	at org.fxmisc.wellbehaved.event.InputMap.lambda$consume$2(InputMap.java:256)
+	at java.base/java.util.Optional.map(Optional.java:265)
+	at org.fxmisc.wellbehaved.event.PatternActionMap.lambda$forEachEventType$1(InputMap.java:414)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:23)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandler.handle(InputHandler.java:50)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$KeyHandler.process(Scene.java:4058)
+	at javafx.scene.Scene$KeyHandler.access$1500(Scene.java:4004)
+	at javafx.scene.Scene.processKeyEvent(Scene.java:2121)
+	at javafx.scene.Scene$ScenePeerListener.keyEvent(Scene.java:2595)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:217)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:149)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleKeyEvent$1(GlassViewEventHandler.java:248)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:390)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleKeyEvent(GlassViewEventHandler.java:247)
+	at com.sun.glass.ui.View.handleKeyEvent(View.java:547)
+	at com.sun.glass.ui.View.notifyKey(View.java:971)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+====
+
+====
+BlueJ run started: Fri Jul 30 21:12:21 CEST 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\SoftwareOntwikkeling\Framework2021-22_Try-outs\Framework2022-VWO-Leeg
+1627672342468: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+1627678999147: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Error or exception for source not in project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\SoftwareOntwikkeling\Framework2021-22_Try-outs\Framework2022-VWO-Leeg\Spel\ArrayList.java, line 701: java.lang.NullPointerException:
+null
+1627679161929: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+1627679164525: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Sat Nov 20 21:32:27 CET 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\SoftwareOntwikkeling\Framework2021-22_Try-outs\Framework2022-VWO-Leeg_Uitwerking voor WVO project
+1637440348625: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Exception in thread "Thread-2" java.lang.NullPointerException
+====
+
+====
+BlueJ run started: Sat Nov 20 23:14:32 CET 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\SoftwareOntwikkeling\Framework2021-22_Try-outs\Framework2022-VWO-Leeg_Uitwerking voor WVO project
+1637446473540: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+1637446504827: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Sat Nov 20 23:16:36 CET 2021
+BlueJ version 4.2.2
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\Dhr. Koldenhof\OneDrive - O.R.S. Lek en Linge\0.Informatica\SoftwareOntwikkeling\Framework2021-22_Try-outs\Framework2022-VWO-Leeg_Uitwerking voor WVO project
+1637446597588: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+1637446608380: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.

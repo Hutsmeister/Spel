@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Keyboard
+comment1.params=e
+comment1.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment2.params=e
+comment2.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment3.params=e
+comment3.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment4.params=venster\ tekenaar
+comment4.target=Keyboard(javax.swing.JFrame,\ Spel.Tekenaar)
+comment5.params=keyCode
+comment5.target=boolean\ isIngedrukt(int)
+comment6.params=keyCode
+comment6.target=boolean\ consumeIngedrukt(int)
+numComments=7

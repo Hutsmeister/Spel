@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Start
+comment0.text=\r\n\ Abstract\ class\ Spel\r\n\ Wat\ doet\ deze\ klasse?\r\n\r\n\ @author\ Dhr.\ Luites\ en\ Dhr.\ Koldenhof\r\n\ @version\ (V4.0)\r\n\ \r\n\ Deze\ klasse\ mag\ je\ NIET\ veranderen\r\n\ \r\n
+comment1.params=
+comment1.target=Start()
+comment2.params=breedte\ hoogte
+comment2.target=Start(int,\ int)
+comment3.params=hoeveelheid
+comment3.target=void\ versnel(int)
+comment4.params=
+comment4.target=void\ stopSpel()
+comment5.params=
+comment5.target=void\ herhaling()
+comment6.params=t
+comment6.target=void\ print(java.lang.String)
+numComments=7
