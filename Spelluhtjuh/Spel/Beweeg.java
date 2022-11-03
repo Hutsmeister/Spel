@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import java.util.ArrayList;
 
 /**
- * Deze klasse zorgt voor de dynamica van het spel.
+ * Deze klasse zorgt voor de dynamica van het spel. YOOOOOOOOOOOOOOOOOOO
  *
  * @author (E.E. Koldenhof)
  * @version (V.1.0)
