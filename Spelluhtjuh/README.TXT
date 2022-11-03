@@ -1,12 +1,10 @@
 ---------------------------------------------------------------------------
-Dit is de README file van het project. Hier moet je je project beschrijven.
-Vertel je lezer (iemand die niets weet over dit project) alles wat hij of
-zij moet weten. Vermeld minstens de volgende dingen:
+Readme filetje
 ------------------------------------------------------------------------
 
-Naam van het project:
-Doel van het project:
-Ontwerpers: (jouw naam)
-Versie of datum:
-Hoe je dit project kunt starten:
-Gebruiksaanwijzing:
+Naam van het project: Spel
+Doel van het project: Spel halen
+Ontwerpers: (jouw naam) : Demi, Sam, Felix
+Versie of datum: 3 November 2022
+Hoe je dit project kunt starten: Spelletje starten
+Gebruiksaanwijzing: spelluhtuh
