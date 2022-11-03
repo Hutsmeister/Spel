@@ -1,2 +1,2 @@
 # Spel
-Spel
+Spell
