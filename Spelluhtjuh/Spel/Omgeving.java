@@ -10,10 +10,8 @@ import Tools.*;
  * Maar dat kunnen ook lijsten van objecten zijn
  * Of zelfs lege lijsten
  * Voor lijsten maken we gebruik van de ArrayList
- *
- * @author (E.E.Koldenhof)
- * @version (V1.0)
- */
+**/ 
+
 public class Omgeving {
     public int breedte, hoogte;
     public Tekenaar tekenaar;
@@ -27,7 +25,7 @@ public class Omgeving {
      * public ArrayList<AnderDing> andereDingen
      * enz.
      */
-
+    public Achtergrond achtergrond;
     /**
      * Constructor voor de objecten van de klasse Omgeving
      * @param breedte, is de breedte van het zichtbare spel
@@ -41,10 +39,14 @@ public class Omgeving {
         muis = m;
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
+        maakAchtergrond();
         voegAanTekenaarToe();
         voegAanBeweegToe();
     }
-
+    
+    public void maakAchterrond(){
+        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.png"));
+    }
 
     /**
      * Deze procedure voegt de gemaakte objecten aan de
@@ -54,6 +56,7 @@ public class Omgeving {
      *
      */
     private void voegAanTekenaarToe(){
+        tekenaar.voegObjectToe(achtergrond);
     }
     
     /**
