@@ -45,7 +45,7 @@ public class Omgeving {
     }
     
     public void maakAchterrond(){
-        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.png"));
+        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.jpg"));
     }
 
     /**
