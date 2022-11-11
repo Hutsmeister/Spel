@@ -42,6 +42,7 @@ public class Omgeving {
         maakAchtergrond();
         voegAanTekenaarToe();
         voegAanBeweegToe();
+        maakSpecialeBeweegObjecten();
     }
     
     public void maakSpecialeBeweegObjecten(){
@@ -69,6 +70,7 @@ public class Omgeving {
      */
     private void voegAanTekenaarToe(){
         tekenaar.voegObjectToe(achtergrond);
+        tekenaar.voegLijstToe(specialeBeweegObjecten);
     }
     
     /**
@@ -80,6 +82,7 @@ public class Omgeving {
      */
 
     private void voegAanBeweegToe(){
+        beweeg.voegLijstToe(specialeBeweegObjecten);
     }
 
 }
