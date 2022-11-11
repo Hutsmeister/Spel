@@ -3,6 +3,8 @@ package Spel;
 import java.util.ArrayList;
 import java.awt.event.KeyEvent;
 import Tools.*;
+import java.awt.Image;
+
 
 /**
  * In deze klasse maak je de objecten die de omgeving van het spel vormen
