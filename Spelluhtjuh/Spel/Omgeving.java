@@ -44,6 +44,18 @@ public class Omgeving {
         voegAanBeweegToe();
     }
     
+    public void maakSpecialeBeweegObjecten(){
+        specialeBeweegObjecten = new ArrayList<BewegendDingExtra>();
+        Image p = Laden.laadPlaatje("plaatjes/scooter.png");
+        specialeBeweegObjecten.add(new BewegendDingExtra(0, 0, 100, breedte, p));
+        /*int teller = 0;
+        while(teller < 10){
+            specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(200, 400), maakGetal(200, 600), maakGetal(-200, 200), breedte, p));
+            teller ++;
+        }
+        */
+    }
+    
     public void maakAchtergrond(){
         achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.jpg"));
     }
