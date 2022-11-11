@@ -51,6 +51,16 @@ public class BestuurbaarDing extends BotsObject
         vy += a;
         y += vy * stap;
         
+        
+       //botsen met sleutel
+       Obstakel sl = omgeving.Obstakels.get(Sleutel);
+       if(botstMet(sl)){
+            omgeving.Obstakels.remove(sl);
+            omgeving.tekenaar.verwijderObject(sl);
+            omgeving.beweeg.verwijderObject(sl);
+            }
+            
+       
         /*
         int teller = 0;
         while(teller < omgeving.SpecialeBeweegObjecten.size()){
