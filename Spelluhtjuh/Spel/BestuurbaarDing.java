@@ -57,7 +57,6 @@ public class BestuurbaarDing extends BotsObject
        if(botstMet(sl)){
             omgeving.Obstakels.remove(sl);
             omgeving.tekenaar.verwijderObject(sl);
-            omgeving.beweeg.verwijderObject(sl);
             isOpgepakt = true;
             }
             
