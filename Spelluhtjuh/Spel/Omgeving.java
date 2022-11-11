@@ -61,6 +61,12 @@ public class Omgeving {
         */
     }
     
+    //sleutel maken
+    public void maakSleutel(){
+    Image s = Laden.laadPlaatje("plaatjes/sleutel.png")
+    new SLeutel(0, 0, false, s);
+    }
+    
     public void maakAchtergrond(){
         achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.jpg"));
     }
@@ -76,6 +82,7 @@ public class Omgeving {
         tekenaar.voegObjectToe(achtergrond);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegObjectToe(sleutel);
+        
     }
     
     /**
