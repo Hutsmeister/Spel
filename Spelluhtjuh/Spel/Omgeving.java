@@ -43,6 +43,7 @@ public class Omgeving {
         voegAanTekenaarToe();
         voegAanBeweegToe();
         maakSpecialeBeweegObjecten();
+        maakSleutel();
     }
     
     //vliegende scooters maken
@@ -72,6 +73,7 @@ public class Omgeving {
     private void voegAanTekenaarToe(){
         tekenaar.voegObjectToe(achtergrond);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
+        tekenaar.voegObjectToe(sleutel);
     }
     
     /**
