@@ -5,8 +5,8 @@ import java.awt.Image;
 
 public class Sleutel extends SpelObject{
   public Sleutel(int x, int y, boolean isOpgepakt, Image plaatje){
-    super(x,y,breedte, hoogte);
-    this.plaatje = "plaatjes/sleutel.png";
+    super(x,y,30, 30);
+    this.plaatje = plaatje;
   }
 
 }
