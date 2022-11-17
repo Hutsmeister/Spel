@@ -50,7 +50,7 @@ public class Omgeving {
     
     //vliegende scooters maken
     public void maakSpecialeBeweegObjecten(){
-        specialeBeweegObjecten = new ArrayList<BewegendDingExtra>();
+        ArrayList specialeBeweegObjecten = new ArrayList<BewegendDingExtra>();
         Image p = Laden.laadPlaatje("plaatjes/scooter.png");
         specialeBeweegObjecten.add(new BewegendDingExtra(0, 0, 100, breedte, p));
         /*int teller = 0;
