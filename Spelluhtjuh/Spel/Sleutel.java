@@ -6,10 +6,11 @@ import java.awt.Image;
 public class Sleutel extends SpelObject{
   Image plaatje;
   public boolean isOpgepakt;
-  public Sleutel(int x, int y, int breedte, int hoogte){
+  
+  public Sleutel(int x, int y, Image plaatje){
     super(x,y,30, 30);
-    isOpgepakt= false;
-    plaatje = Laden.laadPlaatje("plaatjes/klaslokaal.jpg");
+    isOpgepakt false;
+    this.plaatje = plaatje;
   }
 
 }
