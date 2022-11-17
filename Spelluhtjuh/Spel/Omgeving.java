@@ -14,6 +14,14 @@ import java.awt.Image;
  * Voor lijsten maken we gebruik van de ArrayList
 **/ 
 
+public Achtergrond achtergrond;
+public BestuurbaarDing bd1, bd2;
+// ArrayList<Lift> liften;
+public ArrayList<Tafel> tafels;
+public ArrayList<Stoel> stoelen;
+public ArrayList<BewegendDing> beweegObjecten;
+public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
+
 public class Omgeving {
     public int breedte, hoogte;
     public Tekenaar tekenaar;
