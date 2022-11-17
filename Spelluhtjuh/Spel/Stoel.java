@@ -4,13 +4,14 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.Image;
 
-public class Stoel extends SpelObject{
-    public Stoel(int x, int y, int breedte, int hoogte, Image plaatje){
-        super(x,y,breedte, hoogte);
 
+public class Stoel extends SpelObject{
+    Image plaatje;
+    public Stoel(int x, int y, int breedte, int hoogte, Image plaatje){
+        super(x,y,breedte, hoogte, null);
+        this.plaatje = plaatje;
     }
     public void teken(Graphics2D g){
-        g.fillRect((int)x, (int)y,breedte, hoogte);
+        g.drawImage(plaatje, (int)x, (int)y, breedte, hoogte, null);
     }
 }
-
