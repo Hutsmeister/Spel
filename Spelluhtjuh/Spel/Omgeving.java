@@ -20,6 +20,7 @@ public class Omgeving {
     public Beweeg beweeg;
     public Keyboard kb;
     public Mouse muis;
+    public Sleutel sleutel;
     /**
      * Declareer hieronder alle objecten die je in je spel nodig hebt
      * Bijvoorbeeld:
@@ -71,7 +72,7 @@ public class Omgeving {
     //sleutel maken
     public void maakSleutel(){
     Image s = Laden.laadPlaatje("plaatjes/sleutel.png");
-    new SLeutel(0, 0, false, s);
+    new Sleutel(0, 0, s);
     }
     
     public void maakAchtergrond(){
