@@ -6,15 +6,9 @@ import java.awt.Image;
 public class Sleutel extends SpelObject{
   Image plaatje;
   public boolean isOpgepakt;
-  int x;
-  int y;
-  
+
   public Sleutel(int x, int y, Image plaatje){
-    super(x,y, breedte, hoogte);
-    breedte = 30; 
-    hoogte = 30;
-    this.x = x;
-    this.y = y;
+    super(x,y, 30, 30);
     isOpgepakt = false;
     this.plaatje = plaatje;
   }
