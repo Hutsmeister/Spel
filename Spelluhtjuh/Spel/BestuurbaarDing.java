@@ -53,10 +53,9 @@ public class BestuurbaarDing extends BotsObject
         
         
        //botsen met sleutel
-       Obstakel sl = omgeving.Obstakels.get(Sleutel);
-       if(botstMet(sl)){
-            omgeving.Obstakels.remove(sl);
-            omgeving.tekenaar.verwijderObject(sl);
+       Sleutel sleutel; 
+       if(botstMet(sleutel)){
+            omgeving.tekenaar.verwijderObject(sleutel);
             isOpgepakt = true;
             }
             
