@@ -9,15 +9,19 @@ public class BestuurbaarDing extends BotsObject
 {
     public Image plaatje;
     public Omgeving omgeving;
-    public int links, rechts, boven, beneden;
+    public int links, rechts, boven, beneden, levens;
     public double a;
+    public boolean heeftSleutel;
     
-    public BestuurbaarDing(int x, int y, float v, Image plaatje){
+    
+    public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
         super(x, y, 30, 30);
         vx = v;
         vy = v;
         this.plaatje = plaatje;
         a = 11;
+        this.heeftSleutel = heeftSleutel;
+        this.levens = levens; 
     }
     
     public void register(Omgeving o){
@@ -51,13 +55,13 @@ public class BestuurbaarDing extends BotsObject
         vy += a;
         y += vy * stap;
         
-        
        //botsen met sleutel
        Sleutel sleutel; 
        if(botstMet(sleutel)){
-            omgeving.tekenaar.verwijderObject(sleutel);
-            isOpgepakt = true;
-            }
+         omgeving.tekenaar.verwijderObject(sleutel);
+         heeftSleutel= true;
+          }
+    
             
        
         /*
