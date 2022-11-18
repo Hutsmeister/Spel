@@ -84,7 +84,8 @@ public class Omgeving {
     
     public void maakVloeren(int aantal){
         vloeren = new ArrayList<Obstakel>();
-        vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
+        vloeren.add(new Obstakel(0, 
+        /*vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
         vloeren.add(new Obstakel(breedte/2 - 50, hoogte/2 - 10, 100, 10, Color.black)); 
         int teller = 0;
         while(teller < aantal){
@@ -97,8 +98,7 @@ public class Omgeving {
         while(teller < aantal){
             vloeren.add(new Obstakel(x_begin + teller*100, y_begin + 50*teller, 50, 10, Color.black));
             teller ++;
-        }
-        vloeren.add(new Obstakel(12, 450, 167, 10, Color.green));
+        }*/
     }
 
     /**
