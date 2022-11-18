@@ -54,7 +54,7 @@ public class Omgeving {
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
         maakSleutel();
-        maakVloeren(5);
+        maakVloeren();
         voegAanTekenaarToe();
         voegAanBeweegToe();
     }
@@ -64,41 +64,45 @@ public class Omgeving {
         specialeBeweegObjecten = new ArrayList<BewegendDingExtra>();
         Image p = Laden.laadPlaatje("plaatjes/scooter.png");
         specialeBeweegObjecten.add(new BewegendDingExtra(0, 0, 100, breedte, p));
-        /*int teller = 0;
+        int teller = 0;
         while(teller < 10){
             specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(200, 400), maakGetal(200, 600), maakGetal(-200, 200), breedte, p));
             teller ++;
         }
-        */
+        
+    }
+    
+    public int maakGetal(int min, int max){
+        return (int)Math.random()*(max - min) + min;
     }
     
     //sleutel maken
     public void maakSleutel(){
-    Image s = Laden.laadPlaatje("plaatjes/sleutel.png");
-    sleutel = new Sleutel(0, 0, s);
+        Image s = Laden.laadPlaatje("plaatjes/sleutel.png");
+        sleutel = new Sleutel(0, 0, s);
     }
     
     public void maakAchtergrond(){
         achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.jpg"));
     }
     
-    public void maakVloeren(int aantal){
+    public void maakVloeren(){
         vloeren = new ArrayList<Obstakel>();
-        vloeren.add(new Obstakel(0, 
-        /*vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
-        vloeren.add(new Obstakel(breedte/2 - 50, hoogte/2 - 10, 100, 10, Color.black)); 
-        int teller = 0;
-        while(teller < aantal){
-            vloeren.add(new Obstakel(teller*100, hoogte - 50*teller, 50, 10, Color.black));
-            teller ++;
-        }
-        int x_begin = teller*100;
-        int y_begin = hoogte - 50*teller;
-        teller = 0;
-        while(teller < aantal){
-            vloeren.add(new Obstakel(x_begin + teller*100, y_begin + 50*teller, 50, 10, Color.black));
-            teller ++;
-        }*/
+        vloeren.add(new Obstakel(0, 1000, breedte, 50, Color.black));
+        //vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
+        //vloeren.add(new Obstakel(breedte/2 - 50, hoogte/2 - 10, 100, 10, Color.black)); 
+        //int teller = 0;
+        //while(teller < aantal){
+            //vloeren.add(new Obstakel(teller*100, hoogte - 50*teller, 50, 10, Color.black));
+           // teller ++;
+        //}
+        //int x_begin = teller*100;
+        //int y_begin = hoogte - 50*teller;
+        //teller = 0;
+        //while(teller < aantal){
+            //vloeren.add(new Obstakel(x_begin + teller*100, y_begin + 50*teller, 50, 10, Color.black));
+            //teller ++;
+        //}
     }
 
     /**
@@ -113,7 +117,6 @@ public class Omgeving {
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegObjectToe(sleutel);
         tekenaar.voegLijstToe(vloeren);
-        
     }
     
     /**
