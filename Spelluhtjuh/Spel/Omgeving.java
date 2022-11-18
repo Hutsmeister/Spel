@@ -65,10 +65,10 @@ public class Omgeving {
         Image p = Laden.laadPlaatje("plaatjes/scooter.png");
         specialeBeweegObjecten.add(new BewegendDingExtra(0, 0, 100, breedte, p));
         int teller = 0;
-        while(teller < 10){
+        /*while(teller < 10){
             specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 1800), maakGetal(800, 9000), maakGetal(200, 500), breedte, p));
             teller ++;
-        }
+        }*/
         
     }
     
