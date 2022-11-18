@@ -12,7 +12,7 @@ public class Obstakel extends SpelObject{
    private Color kleur;
     
     public Obstakel(int x, int y, int breedte, int hoogte, Color kleur){
-       super(x, y, breedte, hoogte, null);
+       super(x, y, breedte, hoogte);
        this.kleur = kleur;
    }
     
