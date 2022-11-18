@@ -75,7 +75,7 @@ public class Omgeving {
     //sleutel maken
     public void maakSleutel(){
     Image s = Laden.laadPlaatje("plaatjes/sleutel.png");
-    new Sleutel(0, 0, s);
+    sleutel = new Sleutel(0, 0, s);
     }
     
     public void maakAchtergrond(){
