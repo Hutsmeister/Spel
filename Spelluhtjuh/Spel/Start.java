@@ -34,7 +34,7 @@ public class Start{
     // Hoeveel constructoren heeft deze klasse?
     
     public Start(){
-        this(1000,800);
+        this(1920,1020);
     }
 
     //Wat wordt in de onderstaande constructor gedaan ?
