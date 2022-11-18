@@ -2,6 +2,7 @@ package Spel;
 
 import java.util.ArrayList;
 import java.awt.event.KeyEvent;
+import java.awt.Color;
 import Tools.*;
 import java.awt.Image;
 
