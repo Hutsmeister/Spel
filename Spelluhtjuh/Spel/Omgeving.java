@@ -73,7 +73,7 @@ public class Omgeving {
     }
     
     public int maakGetal(int min, int max){
-        return (int)Math.random()*(max - min) + min;
+        return (int)(Math.random()*(max - min) + min);
     }
     
     //sleutel maken
