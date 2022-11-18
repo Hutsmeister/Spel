@@ -7,7 +7,7 @@ import java.awt.Image;
 public class Tafel extends SpelObject{
     Image plaatje;
     public Tafel(int x, int y, int breedte, int hoogte, Image Plaatje){
-        super(x,y,breedte, hoogte, null);
+        super(x,y,breedte, hoogte);
         this.plaatje = plaatje;
     }
     public void teken(Graphics2D g){
