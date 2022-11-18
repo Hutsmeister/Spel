@@ -52,11 +52,11 @@ public class Omgeving {
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
         maakAchtergrond();
-        voegAanTekenaarToe();
-        voegAanBeweegToe();
         maakSpecialeBeweegObjecten();
         maakSleutel();
         maakVloeren(5);
+        voegAanTekenaarToe();
+        voegAanBeweegToe();
     }
     
     //vliegende scooters maken
