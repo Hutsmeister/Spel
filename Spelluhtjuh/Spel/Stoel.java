@@ -12,6 +12,6 @@ public class Stoel extends SpelObject{
         this.plaatje = plaatje;
     }
     public void teken(Graphics2D g){
-        g.drawImage(plaatje, (int)x, (int)y, breedte, hoogte);
+        g.drawImage(plaatje, (int)x, (int)y, breedte, hoogte, null);
     }
 }
