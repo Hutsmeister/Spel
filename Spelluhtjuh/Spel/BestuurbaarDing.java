@@ -45,11 +45,11 @@ public class BestuurbaarDing extends BotsObject
             x += vx * stap;
         }
         if(omgeving.kb.isIngedrukt(boven)){
-            y -= vy * stap;
-            //vy = -300;
+            //y -= vy * stap;
+            vy = -300;
         }
         if(omgeving.kb.isIngedrukt(beneden)){
-            y += vy * stap;
+            //y += vy * stap;
         } 
         
         vy += a;
@@ -61,11 +61,12 @@ public class BestuurbaarDing extends BotsObject
          omgeving.tekenaar.verwijderObject(omgeving.sleutel);
          heeftSleutel= true;
           }
-    
+        
             
        
-        /*
+        
         int teller = 0;
+        /*
         while(teller < omgeving.SpecialeBeweegObjecten.size()){
             BewegendDingExtra be = omgeving.SpecialeBeweegObjecten.get(teller);
             if(botstMet(be)){
@@ -76,8 +77,8 @@ public class BestuurbaarDing extends BotsObject
                 teller++; 
             }
         }
-        
-        
+        */
+        /*
         teller = 0;
         while(teller < omgeving.obstakels.size()){
             Obstakel o = omgeving.obstakels.get(teller);
@@ -92,7 +93,7 @@ public class BestuurbaarDing extends BotsObject
             }
             teller ++;
         }
-        
+        */
         teller = 0;
         while(teller < omgeving.vloeren.size()){
             Obstakel o = omgeving.vloeren.get(teller);
@@ -108,7 +109,7 @@ public class BestuurbaarDing extends BotsObject
             }
             teller ++;
         }
-        
+        /*
         teller = 0;
         while(teller < omgeving.muren.size()){
             Obstakel o = omgeving.muren.get(teller);
@@ -124,7 +125,9 @@ public class BestuurbaarDing extends BotsObject
             }
             teller ++;
         }
-        teller = 0;
+        */
+        /*
+       teller = 0;
         while(teller < omgeving.BeweegObjecten.size()){
             BewegendDing bb = omgeving.BeweegObjecten.get(teller);
             if(botstMet(bb)){
