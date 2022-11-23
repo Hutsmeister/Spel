@@ -2,8 +2,8 @@ package Spel;
 
 import java.util.ArrayList;
 import java.awt.event.KeyEvent;
-import java.awt.Color;
 import Tools.*;
+import java.awt.Color;
 import java.awt.Image;
 
 
@@ -21,7 +21,6 @@ public class Omgeving {
     public Beweeg beweeg;
     public Keyboard kb;
     public Mouse muis;
-    public Sleutel sleutel;
     /**
      * Declareer hieronder alle objecten die je in je spel nodig hebt
      * Bijvoorbeeld:
@@ -29,8 +28,9 @@ public class Omgeving {
      * public ArrayList<AnderDing> andereDingen
      * enz.
      */
+    public Sleutel sleutel;
     public Achtergrond achtergrond;
-    public BestuurbaarDing bd1, bd2;
+    public BestuurbaarDing pacman, legoYoda;
     // ArrayList<Lift> liften;
     public ArrayList<Tafel> tafels;
     public ArrayList<Stoel> stoelen;
@@ -55,8 +55,22 @@ public class Omgeving {
         maakSpecialeBeweegObjecten();
         maakSleutel();
         maakVloeren();
+        maakBestuurbareDingen();
         voegAanTekenaarToe();
         voegAanBeweegToe();
+    }
+    
+    public void maakBestuurbareDingen(){
+        Image p = Laden.laadPlaatje("plaatjes/pacman.gif");
+        Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
+        
+        pacman = new BestuurbaarDing(100, 100, 50, p, false, 10 );
+        pacman.register(this);
+        pacman.defineKeys(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP, KeyEvent.VK_DOWN);
+        
+        legoYoda = new BestuurbaarDing(200, 100, 100, y, false, 10); 
+        legoYoda.register(this);
+        legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
     }
     
     //vliegende scooters maken
@@ -89,7 +103,7 @@ public class Omgeving {
     
     public void maakVloeren(){
         vloeren = new ArrayList<Obstakel>();
-        vloeren.add(new Obstakel(0, 1000, breedte, 50, Color.black));
+        vloeren.add(new Obstakel(0, hoogte, breedte, 50, Color.black));
         //vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
         //vloeren.add(new Obstakel(breedte/2 - 50, hoogte/2 - 10, 100, 10, Color.black)); 
         //int teller = 0;
@@ -118,6 +132,8 @@ public class Omgeving {
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegObjectToe(sleutel);
         tekenaar.voegLijstToe(vloeren);
+        tekenaar.voegObjectToe(pacman);
+        tekenaar.voegObjectToe(legoYoda);
     }
     
     /**
@@ -130,6 +146,8 @@ public class Omgeving {
 
     private void voegAanBeweegToe(){
         beweeg.voegLijstToe(specialeBeweegObjecten);
+        beweeg.voegObjectToe(pacman);
+        beweeg.voegObjectToe(legoYoda);
     }
 
 }
