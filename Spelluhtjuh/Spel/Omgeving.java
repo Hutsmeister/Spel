@@ -57,6 +57,7 @@ public class Omgeving {
         maakSleutel();
         maakVloeren();
         maakWegen();
+        maakTafels();
         maakBestuurbareDingen();
         voegAanTekenaarToe();
         voegAanBeweegToe();
@@ -153,6 +154,7 @@ public class Omgeving {
         tekenaar.voegObjectToe(sleutel);
         tekenaar.voegLijstToe(vloeren);
         tekenaar.voegLijstToe(wegen);
+        tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
     }
