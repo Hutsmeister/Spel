@@ -35,6 +35,7 @@ public class Omgeving {
     public ArrayList<Tafel> tafels;
     public ArrayList<Stoel> stoelen;
     public ArrayList<Obstakel> vloeren;
+    public ArrayList<Weg> wegen;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
     
@@ -55,6 +56,7 @@ public class Omgeving {
         maakSpecialeBeweegObjecten();
         maakSleutel();
         maakVloeren();
+        maakWegen();
         maakBestuurbareDingen();
         voegAanTekenaarToe();
         voegAanBeweegToe();
@@ -127,6 +129,16 @@ public class Omgeving {
             //teller ++;
         //}
     }
+    
+    public void maakWegen(){
+        wegen = new ArrayList<Weg>();
+        int teller = 0;
+        Image q = Laden.laadPlaatje("plaatjes/weg.png");
+        while(teller < 20){
+            wegen.add(new Weg(0+252*teller, 800, 253, 201, q));
+            teller ++;
+        }
+    }
 
     /**
      * Deze procedure voegt de gemaakte objecten aan de
@@ -140,6 +152,7 @@ public class Omgeving {
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegObjectToe(sleutel);
         tekenaar.voegLijstToe(vloeren);
+        tekenaar.voegLijstToe(wegen);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
     }
