@@ -59,6 +59,14 @@ public class Omgeving {
         voegAanTekenaarToe();
         voegAanBeweegToe();
     }
+      public void maakTafels(){
+        tafels = new ArrayList<Tafel>();
+        tafels.add(new Tafel(100, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
+        tafels.add(new Tafel(200, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
+        tafels.add(new Tafel(300, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
+        tafels.add(new Tafel(400, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
+        tafels.add(new Tafel(500, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
+    } 
     
     public void maakBestuurbareDingen(){
         Image p = Laden.laadPlaatje("plaatjes/pacman.gif");
