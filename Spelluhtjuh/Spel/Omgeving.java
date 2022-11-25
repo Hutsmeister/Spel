@@ -29,6 +29,7 @@ public class Omgeving {
      * enz.
      */
     public Sleutel sleutel;
+    public Klok klok;
     public Gijs gijs;
     public Stijn stijn;
     public Achtergrond achtergrond;
@@ -54,6 +55,8 @@ public class Omgeving {
         muis = m;
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
+        klok = new Klok(100, 100, 100, 50, 10);
+        
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
         maakSleutel();
@@ -175,6 +178,7 @@ public class Omgeving {
         tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
+        tekenaar.voegObjectToe(klok);
     }
     
     /**
@@ -189,6 +193,7 @@ public class Omgeving {
         beweeg.voegLijstToe(specialeBeweegObjecten);
         beweeg.voegObjectToe(pacman);
         beweeg.voegObjectToe(legoYoda);
+        beweeg.voegObjectToe(klok);
     }
 
 }
