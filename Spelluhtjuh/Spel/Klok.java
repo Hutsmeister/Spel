@@ -42,11 +42,11 @@ public class Klok extends BeweegObject{
         }
     }
     
-    public void teken(Graphics2D g){
-        g.setColor(Color.CYAN);
+        public void teken(Graphics2D g){
+        g.setColor(Color.WHITE);
         g.fillRect((int)x, (int)y, breedte, hoogte);
-        g.setFont(new Font(Font.SERIF, Font.ITALIC, 18));
-        g.setColor(Color.RED);
+        g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 18));
+        g.setColor(Color.BLACK);
         g.drawString(melding, x+5, y+30);
     }
 }
