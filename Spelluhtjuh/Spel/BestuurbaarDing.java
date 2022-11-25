@@ -12,14 +12,12 @@ public class BestuurbaarDing extends BotsObject
     public int links, rechts, boven, beneden, levens;
     public double a;
     public boolean heeftSleutel;
-    public float springstap;
     
     
-    public BestuurbaarDing(int x, int y, float v, float springstap, Image plaatje, boolean heeftSleutel, int levens){
+    public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
         super(x, y, 30, 30);
         vx = v;
         vy = v;
-        this.springstap = springstap;
         this.plaatje = plaatje;
         a = 11;
         this.heeftSleutel = heeftSleutel;
@@ -46,22 +44,15 @@ public class BestuurbaarDing extends BotsObject
         if(omgeving.kb.isIngedrukt(rechts)){
             x += vx * stap;
         }
-        if(vy==0){
-            if(omgeving.kb.consumeIngedrukt(boven)){
-                //y -= vy * stap;
-                vy = - springstap;
-            }
-            if(omgeving.kb.consumeIngedrukt(boven)){
-                //y -= vy * stap;
-                vy = - springstap;
-            }
+        if(omgeving.kb.isIngedrukt(boven)){
+            y -= vy * stap;
         }
         if(omgeving.kb.isIngedrukt(beneden)){
-            //y += vy * stap;
+            y += vy * stap;
         } 
         
-        vy += a;
-        y += vy * stap;
+        //vy += a;
+        //y += vy * stap;
         
         //botsen met sleutel
         Sleutel sleutel; 
