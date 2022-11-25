@@ -79,11 +79,11 @@ public class Omgeving {
         Image p = Laden.laadPlaatje("plaatjes/pacman.gif");
         Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
         
-        pacman = new BestuurbaarDing(100, 100, 50, p, false, 10 );
+        pacman = new BestuurbaarDing(100, 100, 200, p, false, 10 );
         pacman.register(this);
         pacman.defineKeys(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP, KeyEvent.VK_DOWN);
         
-        legoYoda = new BestuurbaarDing(200, 100, 100, y, false, 10); 
+        legoYoda = new BestuurbaarDing(200, 100, 250, y, false, 10); 
         legoYoda.register(this);
         legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
     }
