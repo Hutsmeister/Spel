@@ -102,10 +102,7 @@ public class Omgeving {
         
     }
     
-        public void maakJumpscare()
-        {
-        Image p = Laden.laadPlaatje("plaatjes/jochem.png");
-    }
+     
     
     public int maakGetal(int min, int max){
         return (int)(Math.random()*(max - min) + min);
@@ -178,7 +175,6 @@ public class Omgeving {
         tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
-        tekenaar.voegObjectToe(jumpscare);
     }
     
     /**
