@@ -47,6 +47,6 @@ public class Klok extends BeweegObject{
         g.fillRect((int)x, (int)y, breedte, hoogte);
         g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 18));
         g.setColor(Color.BLACK);
-        g.drawString(melding, x+5, y+30);
+        g.drawString(melding, x+5, y+26);
     }
 }
