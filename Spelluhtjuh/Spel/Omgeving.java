@@ -128,7 +128,7 @@ public class Omgeving {
     }
     
     public void maakAchtergrond(){
-        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.jpg"));
+        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/pastelblauw.jpg"));
     }
     
     public void maakVloeren(){
