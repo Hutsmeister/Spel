@@ -5,7 +5,7 @@ import java.awt.Image;
 
 public class Weg extends SpelObject{
     Image plaatje;
-    public Weg(int x, int y, int breedte, int hoogte, Image Plaatje){
+    public Weg(int x, int y, int breedte, int hoogte, Image plaatje){
         super(x,y,breedte, hoogte);
         this.plaatje = plaatje;
     }
