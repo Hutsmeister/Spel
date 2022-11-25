@@ -29,6 +29,8 @@ public class Omgeving {
      * enz.
      */
     public Sleutel sleutel;
+    public Gijs gijs;
+    public Stijn stijn;
     public Achtergrond achtergrond;
     public BestuurbaarDing pacman, legoYoda;
     // ArrayList<Lift> liften;
@@ -55,6 +57,8 @@ public class Omgeving {
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
         maakSleutel();
+        maakGijs();
+        maakStijn();
         maakVloeren();
         maakWegen();
         maakTafels();
@@ -113,6 +117,16 @@ public class Omgeving {
         sleutel = new Sleutel(0, 0, s);
     }
     
+        public void maakGijs(){
+        Image g = Laden.laadPlaatje("plaatjes/HolleBolleGijs.png");
+        gijs = new Gijs(0, 0, g);
+    }
+    
+    public void maakStijn(){
+        Image st = Laden.laadPlaatje("plaatjes/Stijn.png");
+        stijn = new Stijn(0, 0, st);
+    }
+    
     public void maakAchtergrond(){
         achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/klaslokaal.jpg"));
     }
@@ -157,6 +171,8 @@ public class Omgeving {
         tekenaar.voegObjectToe(achtergrond);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegObjectToe(sleutel);
+        tekenaar.voegObjectToe(gijs);
+        tekenaar.voegObjectToe(stijn);
         tekenaar.voegLijstToe(vloeren);
         tekenaar.voegLijstToe(wegen);
         tekenaar.voegLijstToe(tafels);
