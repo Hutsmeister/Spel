@@ -116,16 +116,16 @@ public class Omgeving {
     
         public void maakGijs(){
         Image g = Laden.laadPlaatje("plaatjes/HolleBolleGijs.png");
-        gijs = new Gijs(0, 0, g);
+        gijs = new Gijs(500, 500, g);
     }
     
     public void maakStijn(){
         Image st = Laden.laadPlaatje("plaatjes/Stijn.png");
-        stijn = new Stijn(0, 0, st);
+        stijn = new Stijn(200, 200, st);
     }
     
     public void maakAchtergrond(){
-        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/achtergrondblauw.png"));
+        achtergrond = new Achtergrond(breedte, hoogte, Laden.laadPlaatje("plaatjes/pastelblauw.jpg"));
     }
     
     public void maakVloeren(){
@@ -166,12 +166,12 @@ public class Omgeving {
      */
     private void voegAanTekenaarToe(){
         tekenaar.voegObjectToe(achtergrond);
-        tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegObjectToe(sleutel);
         tekenaar.voegObjectToe(gijs);
         tekenaar.voegObjectToe(stijn);
         tekenaar.voegLijstToe(vloeren);
         tekenaar.voegLijstToe(wegen);
+        tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
