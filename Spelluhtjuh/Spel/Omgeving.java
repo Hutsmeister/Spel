@@ -38,6 +38,7 @@ public class Omgeving {
     public ArrayList<Tafel> tafels;
     public ArrayList<Stoel> stoelen;
     public ArrayList<Obstakel> vloeren;
+    public ArrayList<Obstakel> muren;
     public ArrayList<Weg> wegen;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
@@ -55,7 +56,7 @@ public class Omgeving {
         muis = m;
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
-        klok = new Klok(910, 64, 960, 89, 900);
+        klok = new Klok(100, 100, 100, 50, 10);
         
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
@@ -66,9 +67,11 @@ public class Omgeving {
         maakWegen();
         maakTafels();
         maakBestuurbareDingen();
+        maakMuren();
         voegAanTekenaarToe();
         voegAanBeweegToe();
     }
+    
       public void maakTafels(){
         tafels = new ArrayList<Tafel>();
         tafels.add(new Tafel(100, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
@@ -77,6 +80,14 @@ public class Omgeving {
         tafels.add(new Tafel(400, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
         tafels.add(new Tafel(500, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
     } 
+    
+    public void maakMuren(){
+        muren = new ArrayList<Obstakel>();
+        muren.add(new Obstakel(0,0, 1, hoogte, Color.BLACK));
+        muren.add(new Obstakel(0,1, breedte, 1, Color.BLACK));
+        muren.add(new Obstakel(0,hoogte, breedte, 1, Color.BLACK));
+        muren.add(new Obstakel(breedte, 0, 1, hoogte, Color.BLACK));        
+    }
     
     public void maakBestuurbareDingen(){
         Image p = Laden.laadPlaatje("plaatjes/pacman.png");
@@ -105,7 +116,7 @@ public class Omgeving {
         
     }
     
-     
+    
     
     public int maakGetal(int min, int max){
         return (int)(Math.random()*(max - min) + min);
@@ -179,6 +190,7 @@ public class Omgeving {
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
         tekenaar.voegObjectToe(klok);
+        tekenaar.voegLijstToe(muren);
     }
     
     /**
