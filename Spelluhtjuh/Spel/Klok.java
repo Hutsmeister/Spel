@@ -31,13 +31,13 @@ public class Klok extends BeweegObject{
         if(status){
             if(now-vorigeTijd >= snelheid){
                 verlopenTijd ++;
-                melding = "Time "+ verlopenTijd;
+                melding = "Time: "+ verlopenTijd;
                 vorigeTijd = now;
             }
             if(verlopenTijd >= alarmtijd){
                 status = false;
                 tijdIsOm = true;
-                melding = "Time "+ verlopenTijd;
+                melding = "Time: "+ verlopenTijd;
             }
         }
     }
