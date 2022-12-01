@@ -6,7 +6,7 @@ public class Gijs extends SpelObject{
   Image plaatje;
 
   public Gijs(int x, int y, Image plaatje){
-    super(x,y, 30, 30);
+    super(x,y, 131, 160);
     this.plaatje = plaatje;
   }
   public void teken(Graphics2D g){
