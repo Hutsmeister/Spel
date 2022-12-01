@@ -79,7 +79,7 @@ public class Omgeving {
     } 
     
     public void maakBestuurbareDingen(){
-        Image p = Laden.laadPlaatje("plaatjes/pacman.gif");
+        Image p = Laden.laadPlaatje("plaatjes/pacman.png");
         Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
         
         pacman = new BestuurbaarDing(100, 100, 200, p, false, 10 );
