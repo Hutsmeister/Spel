@@ -61,7 +61,7 @@ public class Omgeving {
         
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
-        maakJochems();
+        //maakJochems();
         maakSleutel();
         maakGijs();
         maakStijn();
