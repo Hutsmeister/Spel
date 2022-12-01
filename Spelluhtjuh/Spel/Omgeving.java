@@ -199,6 +199,7 @@ public class Omgeving {
         tekenaar.voegLijstToe(vloeren);
         tekenaar.voegLijstToe(wegen);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
+        tekenaar.voegLijstToe(jochems);
         tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
@@ -216,6 +217,7 @@ public class Omgeving {
 
     private void voegAanBeweegToe(){
         beweeg.voegLijstToe(specialeBeweegObjecten);
+        beweeg.voegLijstToe(jochems);
         beweeg.voegObjectToe(pacman);
         beweeg.voegObjectToe(legoYoda);
         beweeg.voegObjectToe(klok);
