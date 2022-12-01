@@ -8,7 +8,7 @@ public class Stijn extends SpelObject{
   public boolean isGered;
 
   public Stijn(int x, int y, Image plaatje){
-    super(x,y, 30, 30);
+    super(x,y, 145, 145);
     isGered = false;
     this.plaatje = plaatje;
   }
