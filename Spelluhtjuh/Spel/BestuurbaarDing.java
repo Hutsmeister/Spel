@@ -12,6 +12,7 @@ public class BestuurbaarDing extends BotsObject
     public int links, rechts, boven, beneden, levens;
     public double a;
     public boolean heeftSleutel;
+    public int gesprongen;
     
     
     public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
@@ -22,6 +23,7 @@ public class BestuurbaarDing extends BotsObject
         a = 11;
         this.heeftSleutel = heeftSleutel;
         this.levens = levens; 
+        gesprongen = 0;
     }
     
     public void register(Omgeving o){
@@ -44,15 +46,16 @@ public class BestuurbaarDing extends BotsObject
         if(omgeving.kb.isIngedrukt(rechts)){
             x += vx * stap;
         }
-        if(omgeving.kb.isIngedrukt(boven)){
-            y -= vy * stap;
+        if(omgeving.kb.isIngedrukt(boven) && gesprongen == 0){
+            vy = -300;
+            gesprongen ++;
         }
         if(omgeving.kb.isIngedrukt(beneden)){
-            y += vy * stap;
+            //y += vy * stap;
         } 
         
-        //vy += a;
-        //y += vy * stap;
+        vy += a;
+        y += vy * stap;
         
         //botsen met sleutel
         Sleutel sleutel; 
@@ -102,6 +105,7 @@ public class BestuurbaarDing extends BotsObject
                 }
                 if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
                     zetyTerug();
+                    vy = 0;
                 }
                 
             }
@@ -118,7 +122,7 @@ public class BestuurbaarDing extends BotsObject
                 }
                 if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
                     zetyTerug();
-                    //vy = 0;
+                    vy = 0;
                 }
                 
             }
