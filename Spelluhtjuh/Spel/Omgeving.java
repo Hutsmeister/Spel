@@ -143,12 +143,12 @@ public class Omgeving {
     
         public void maakGijs(){
         Image g = Laden.laadPlaatje("plaatjes/HolleBolleGijs.png");
-        gijs = new Gijs(500, 500, g);
+        gijs = new Gijs(1805, 18, g);
     }
     
     public void maakStijn(){
         Image st = Laden.laadPlaatje("plaatjes/Stijn.png");
-        stijn = new Stijn(200, 200, st);
+        stijn = new Stijn(1701, 33, st);
     }
     
     public void maakAchtergrond(){
