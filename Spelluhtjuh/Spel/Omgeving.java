@@ -120,7 +120,15 @@ public class Omgeving {
     
         public void maakJochems(){
         jochems = new ArrayList<Jochem>();
-        
+        String [] regels = Laden.laadTextFile("omgevingen/jochems.txt").split("\n");
+        Image j = Laden.laadPlaatje("plaatjes/Jochem.jpeg");
+        int teller = 0;
+        while(teller < regels.length){
+            int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" "," "));
+            int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" "," "));
+            jochems.add(new Jochem(x, y, 10, 50, j));
+            teller ++;
+        }
     }
     
     public int maakGetal(int min, int max){
