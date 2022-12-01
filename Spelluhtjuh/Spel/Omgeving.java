@@ -40,6 +40,7 @@ public class Omgeving {
     public ArrayList<Obstakel> vloeren;
     public ArrayList<Obstakel> muren;
     public ArrayList<Weg> wegen;
+    public ArrayList<Jochem> jochems;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
     
@@ -60,6 +61,7 @@ public class Omgeving {
         
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
+        maakJochems();
         maakSleutel();
         maakGijs();
         maakStijn();
@@ -116,7 +118,10 @@ public class Omgeving {
         
     }
     
-    
+        public void maakJochems(){
+        jochems = new ArrayList<Jochem>();
+        
+    }
     
     public int maakGetal(int min, int max){
         return (int)(Math.random()*(max - min) + min);
