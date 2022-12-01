@@ -110,7 +110,7 @@ public class Omgeving {
         //specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 400), maakGetal(200, 600), maakGetal(-200, 200), breedte, p));
         int teller = 0;
         while(teller < 3){
-            specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 1800), maakGetal(800, 900), maakGetal(200, 500), breedte, p));
+            specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 1800), maakGetal(890, 930), maakGetal(200, 500), breedte, p));
             teller ++;
         }
         
