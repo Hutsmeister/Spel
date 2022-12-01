@@ -102,29 +102,29 @@ public class BestuurbaarDing extends BotsObject
                 }
                 if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
                     zetyTerug();
-                    vy = 0;
                 }
                 
             }
             teller ++;
         }
-        /*
+        
         teller = 0;
         while(teller < omgeving.muren.size()){
             Obstakel o = omgeving.muren.get(teller);
             if(botstMet(o)){
                 if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
                     zetxTerug();
+                    //vx = 0;
                 }
                 if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
                     zetyTerug();
-                    vy = 0;
+                    //vy = 0;
                 }
                 
             }
             teller ++;
         }
-        */
+        
         /*
        teller = 0;
         while(teller < omgeving.BeweegObjecten.size()){
