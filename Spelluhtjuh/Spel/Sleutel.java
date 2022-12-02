@@ -8,7 +8,7 @@ public class Sleutel extends SpelObject{
   public boolean isOpgepakt;
 
   public Sleutel(int x, int y, Image plaatje){
-    super(x,y, 30, 30);
+    super(x,y, 60, 60);
     isOpgepakt = false;
     this.plaatje = plaatje;
   }
