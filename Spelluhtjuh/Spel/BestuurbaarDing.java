@@ -20,7 +20,7 @@ public class BestuurbaarDing extends BotsObject
         vx = v;
         vy = v;
         this.plaatje = plaatje;
-        a = 11;
+        a = 20;
         this.heeftSleutel = heeftSleutel;
         this.levens = levens; 
         gesprongen = 0;
@@ -47,8 +47,8 @@ public class BestuurbaarDing extends BotsObject
             x += vx * stap;
         }
         if(omgeving.kb.isIngedrukt(boven) && gesprongen == 0){
-            vy = -300;
-            gesprongen ++;
+            vy = -800;
+            gesprongen = 1;
         }
         if(omgeving.kb.isIngedrukt(beneden)){
             //y += vy * stap;
@@ -106,8 +106,8 @@ public class BestuurbaarDing extends BotsObject
                 if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
                     zetyTerug();
                     vy = 0;
+                    gesprongen = 0;
                 }
-                
             }
             teller ++;
         }
@@ -123,6 +123,7 @@ public class BestuurbaarDing extends BotsObject
                 if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
                     zetyTerug();
                     vy = 0;
+                    gesprongen = 0;
                 }
                 
             }
