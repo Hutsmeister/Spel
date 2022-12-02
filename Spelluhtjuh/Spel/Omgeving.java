@@ -106,8 +106,15 @@ public class Omgeving {
         legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
     }
     public void maakBlokjes(){
-        blokjes = new ArrayList<Blokje>();
-        blokjes.add(new Blokje(9,975, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+       blokjes = new ArrayList<Blokje>();
+        blokjes.add(new Blokje(9,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(313,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(629,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(945,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(1261,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(1577,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(1893,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        blokjes.add(new Blokje(1640,173, 480, 43,Laden.laadPlaatje("plaatjes/rechthoek.png")));
     }
 
 
