@@ -44,6 +44,7 @@ public class Omgeving {
     public ArrayList<Blokje> blokjes;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
+    public ArrayList<Hart> levens; 
     
     /**
      * Constructor voor de objecten van de klasse Omgeving
@@ -238,7 +239,9 @@ public class Omgeving {
         tekenaar.voegObjectToe(legoYoda);
         tekenaar.voegObjectToe(klok);
         tekenaar.voegLijstToe(muren);
+        tekenaar.voegLijstToe(levens);
     }
+    
     
     /**
      * Deze procedure voegt de gemaakte objecten aan de
