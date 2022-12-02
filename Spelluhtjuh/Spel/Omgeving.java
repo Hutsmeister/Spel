@@ -57,7 +57,7 @@ public class Omgeving {
         muis = m;
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
-        klok = new Klok(862, 102, 105, 68, 900);
+        klok = new Klok(910, 64, 100, 50, 900);
         
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
