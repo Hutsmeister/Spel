@@ -41,6 +41,7 @@ public class Omgeving {
     public ArrayList<Obstakel> muren;
     public ArrayList<Weg> wegen;
     public ArrayList<Jochem> jochems;
+    public ArrayList<Blokje> blokjes;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
     
@@ -65,6 +66,7 @@ public class Omgeving {
         maakSleutel();
         maakGijs();
         maakStijn();
+        maakBlokjes();
         maakVloeren();
         maakWegen();
         maakTafels();
@@ -103,6 +105,12 @@ public class Omgeving {
         legoYoda.register(this);
         legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
     }
+    public void maakBlokjes(){
+        blokjes = new ArrayList<Blokje>();
+        blokjes.add(new Blokje(9,975, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+    }
+
+
     
     //vliegende scooters maken
     public void maakSpecialeBeweegObjecten(){
@@ -201,6 +209,7 @@ public class Omgeving {
         tekenaar.voegLijstToe(wegen);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegLijstToe(jochems);
+        tekenaar.voegLijstToe(blokjes);
         tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
