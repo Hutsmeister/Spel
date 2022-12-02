@@ -57,11 +57,11 @@ public class Omgeving {
         muis = m;
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
-        klok = new Klok(910, 64, 100, 50, 900);
+        klok = new Klok(862, 102, 105, 68, 900);
         
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
-        //maakJochems();
+        maakJochems();
         maakSleutel();
         maakGijs();
         maakStijn();
@@ -118,18 +118,19 @@ public class Omgeving {
         
     }
     
-        /*public void maakJochems(){
+        public void maakJochems(){
         jochems = new ArrayList<Jochem>();
         String [] regels = Laden.laadTextFile("omgevingen/jochems.txt").split("\n");
         Image j = Laden.laadPlaatje("plaatjes/Jochem.jpeg");
+        jochems.add(new Jochem(300, 400, 50, 50, j));
         int teller = 0;
         while(teller < regels.length){
             int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" "," "));
             int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" "," "));
-            jochems.add(new Jochem(x, y, 10, 50, j));
+            jochems.add(new Jochem(x, y, 50, 50, j));
             teller ++;
         }
-    }*/
+    }
     
     public int maakGetal(int min, int max){
         return (int)(Math.random()*(max - min) + min);
@@ -199,7 +200,7 @@ public class Omgeving {
         tekenaar.voegLijstToe(vloeren);
         tekenaar.voegLijstToe(wegen);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
-        //tekenaar.voegLijstToe(jochems);
+        tekenaar.voegLijstToe(jochems);
         tekenaar.voegLijstToe(tafels);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
@@ -217,7 +218,7 @@ public class Omgeving {
 
     private void voegAanBeweegToe(){
         beweeg.voegLijstToe(specialeBeweegObjecten);
-        //beweeg.voegLijstToe(jochems);
+        beweeg.voegLijstToe(jochems);
         beweeg.voegObjectToe(pacman);
         beweeg.voegObjectToe(legoYoda);
         beweeg.voegObjectToe(klok);
