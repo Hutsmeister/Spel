@@ -126,20 +126,16 @@ public class Omgeving {
         
     }
     
-        public void maakJochems(){
+    public void maakJochems(){
         jochems = new ArrayList<Jochem>();
-        String [] regels = Laden.laadTextFile("omgevingen/jochems.txt").split("\n");
         Image j = Laden.laadPlaatje("plaatjes/Jochem.jpeg");
-        jochems.add(new Jochem(300, 400, 50, 50, j));
-        int teller = 0;
-        while(teller < regels.length){
-            int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" "," "));
-            int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" "," "));
-            jochems.add(new Jochem(x, y, 50, 50, j));
-            teller ++;
-        }
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
     }
-    
+
     public int maakGetal(int min, int max){
         return (int)(Math.random()*(max - min) + min);
     }
