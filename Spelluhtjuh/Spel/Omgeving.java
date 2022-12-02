@@ -93,6 +93,26 @@ public class Omgeving {
         muren.add(new Obstakel(breedte, 0, 1, hoogte, Color.BLACK));        
     }
     
+    //levens op het scherm zetten
+    public void maakLevens(){
+        Image h = Laden.laadPlaatje("plaatjes/hart.png");
+        Image p = Laden.laadPlaatje("plaatjes/pacman.png");
+        Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
+        levens = new ArrayList<Hart>();
+        int tellerpacman = 10;
+        int tellerlegoyoda = 10;
+        levens.add(new Hart(80, 20, 30, 30, p));
+        levens.add(new Hart(80, 60, 30, 30, y));
+        while(tellerpacman > 0){
+            levens.add(new Hart(100 + 20 * tellerpacman, 20, 30, 30, h));
+            tellerpacman --;
+        }
+        while(tellerlegoyoda > 0){
+            levens.add(new Hart(100 + 20 * tellerlegoyoda, 60, 30, 30, h));
+            tellerlegoyoda --;
+        }
+    }
+    
     public void maakBestuurbareDingen(){
         Image p = Laden.laadPlaatje("plaatjes/pacman.png");
         Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
