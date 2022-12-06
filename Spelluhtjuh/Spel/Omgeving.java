@@ -73,6 +73,7 @@ public class Omgeving {
         maakTafels();
         maakBestuurbareDingen();
         maakMuren();
+        maakLevens();
         voegAanTekenaarToe();
         voegAanBeweegToe();
     }
