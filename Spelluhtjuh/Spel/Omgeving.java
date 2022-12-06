@@ -44,7 +44,8 @@ public class Omgeving {
     public ArrayList<Blokje> blokjes;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
-    public ArrayList<Hart> levens; 
+    public ArrayList<Hart> pacmanLevens; 
+    public ArrayList<Hart> legoYodaLevens;
     
     /**
      * Constructor voor de objecten van de klasse Omgeving
@@ -100,19 +101,26 @@ public class Omgeving {
         Image h = Laden.laadPlaatje("plaatjes/hart.png");
         Image p = Laden.laadPlaatje("plaatjes/pacman.png");
         Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
-        levens = new ArrayList<Hart>();
-        int tellerpacman = 10;
-        int tellerlegoyoda = 10;
-        levens.add(new Hart(80, 20, 30, 30, p));
-        levens.add(new Hart(80, 60, 30, 30, y));
-        while(tellerpacman > 0){
-            levens.add(new Hart(100 + 20 * tellerpacman, 20, 30, 30, h));
-            tellerpacman --;
+        legoYodaLevens = new ArrayList<Hart>();
+        pacmanLevens = new ArrayList<Hart>();
+        
+        
+
+        
+        
+        
+        
+        while(pacman.levens > 0){
+            pacmanLevens.add(new Hart(100 + 20 * pacman.levens, 20, 30, 30, h));
+            pacman.levens --;
         }
-        while(tellerlegoyoda > 0){
-            levens.add(new Hart(100 + 20 * tellerlegoyoda, 60, 30, 30, h));
-            tellerlegoyoda --;
+        
+        while(legoYoda.levens > 0){
+            legoYodaLevens.add(new Hart(100 + 20 * legoYoda.levens, 60, 30, 30, h));
+            legoYoda.levens --;
         }
+        pacmanLevens.add(new Hart(80, 20, 30, 30, p)); // icon pacman
+        legoYodaLevens.add(new Hart(80, 60, 30, 30, y)); // icon legoYoda
     }
     
     public void maakBestuurbareDingen(){
@@ -128,7 +136,7 @@ public class Omgeving {
         legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
     }
     public void maakBlokjes(){
-       blokjes = new ArrayList<Blokje>();
+        blokjes = new ArrayList<Blokje>();
         blokjes.add(new Blokje(9,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
         blokjes.add(new Blokje(313,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
         blokjes.add(new Blokje(629,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
@@ -158,11 +166,11 @@ public class Omgeving {
     public void maakJochems(){
         jochems = new ArrayList<Jochem>();
         Image j = Laden.laadPlaatje("plaatjes/Jochem.jpeg");
-        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
-        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
-        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
-        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
-        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), maakGetal(600, breedte), j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
+        jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
     }
 
     public int maakGetal(int min, int max){
@@ -240,8 +248,9 @@ public class Omgeving {
         tekenaar.voegObjectToe(legoYoda);
         tekenaar.voegObjectToe(klok);
         tekenaar.voegLijstToe(muren);
-        tekenaar.voegLijstToe(levens);
-    }
+        tekenaar.voegLijstToe(pacmanLevens); 
+        tekenaar.voegLijstToe(legoYodaLevens);
+    }   
     
     
     /**
