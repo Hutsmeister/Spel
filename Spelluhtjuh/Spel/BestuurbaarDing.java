@@ -1,4 +1,7 @@
 //author Demi
+
+// BOTSMET FOUT!!
+
 package Spel;
 import Tools.*;
 import java.awt.Image;
@@ -48,7 +51,10 @@ public class BestuurbaarDing extends BotsObject
         }
         if(omgeving.kb.isIngedrukt(boven) && gesprongen == 0){
             vy = -800;
-            gesprongen = 1;
+            if(omgeving.kb.isIngedrukt(boven) ){
+                vy = -800;
+                gesprongen = 1;
+            }
         }
         if(omgeving.kb.isIngedrukt(beneden)){
             //y += vy * stap;
@@ -68,18 +74,35 @@ public class BestuurbaarDing extends BotsObject
        
         
         int teller = 0;
-        /*
-        while(teller < omgeving.SpecialeBeweegObjecten.size()){
-            BewegendDingExtra be = omgeving.SpecialeBeweegObjecten.get(teller);
-            if(botstMet(be)){
-                omgeving.SpecialeBeweegObjecten.remove(be);
+        
+        while(teller < omgeving.specialeBeweegObjecten.size()){
+            BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
+            if(omgeving.pacman.botstMet(be)){
+                omgeving.specialeBeweegObjecten.remove(be);
                 omgeving.tekenaar.verwijderObject(be);
                 omgeving.beweeg.verwijderObject(be);
+                omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens));
+                //omgeving.pacmanLevens.remove(omgeving.pacman.levens);
+                omgeving.pacman.levens --;
             }else{
-                teller++; 
+                teller++;
             }
         }
-        */
+        
+        while(teller < omgeving.specialeBeweegObjecten.size()){
+            BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
+            if(omgeving.legoYoda.botstMet(be)){
+                omgeving.specialeBeweegObjecten.remove(be);
+                omgeving.tekenaar.verwijderObject(be);
+                omgeving.beweeg.verwijderObject(be);
+                omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.pacman.levens));
+                //omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens);
+                omgeving.legoYoda.levens --;
+            }else{
+                teller++;
+            }
+        }
+        
         /*
         teller = 0;
         while(teller < omgeving.obstakels.size()){
@@ -131,7 +154,7 @@ public class BestuurbaarDing extends BotsObject
         }
         
         /*
-       teller = 0;
+        teller = 0;
         while(teller < omgeving.BeweegObjecten.size()){
             BewegendDing bb = omgeving.BeweegObjecten.get(teller);
             if(botstMet(bb)){
