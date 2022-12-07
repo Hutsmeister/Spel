@@ -139,8 +139,18 @@ public class Omgeving {
         legoYoda.register(this);
         legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
     }
-    public void maakBlokjes(){
+    public void maakBlokjes() {
         blokjes = new ArrayList<Blokje>();
+        //String[] regels = Laden.laadTextFile("omgevingen/blokjes.txt").split("/n");
+       // int teller = 0;
+       // while (teller < regels.length) {
+        //    int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" ", ""));
+        //    int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" ", ""));
+
+         //   blokjes.add(new Blokje(x,y,152,12,Laden.laadPlaatje("plaatjes/blokje.png")));
+       //     teller++;
+
+        //}
         Image b = Laden.laadPlaatje("plaatjes/rechthoek.png");
         blokjes.add(new Blokje(9,978, 152, 12,b));
         blokjes.add(new Blokje(313,978, 152, 12,b));
@@ -150,6 +160,7 @@ public class Omgeving {
         blokjes.add(new Blokje(1577,978, 152, 12,b));
         blokjes.add(new Blokje(1893,978, 152, 12,b));
         blokjes.add(new Blokje(1640,173, 480, 43,b));
+
     }
 
 
