@@ -1,6 +1,6 @@
 //author Demi
 
-// BOTSMET FOUT!!
+// BOTSMET
 
 package Spel;
 import Tools.*;
@@ -82,7 +82,7 @@ public class BestuurbaarDing extends BotsObject
                 omgeving.tekenaar.verwijderObject(be);
                 omgeving.beweeg.verwijderObject(be);
                 omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens));
-                //omgeving.pacmanLevens.remove(omgeving.pacman.levens);
+                omgeving.pacmanLevens.remove(omgeving.pacman.levens);
                 omgeving.pacman.levens --;
             }else{
                 teller++;
@@ -90,13 +90,13 @@ public class BestuurbaarDing extends BotsObject
         }
         
         while(teller < omgeving.specialeBeweegObjecten.size()){
-            BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
-            if(omgeving.legoYoda.botstMet(be)){
-                omgeving.specialeBeweegObjecten.remove(be);
-                omgeving.tekenaar.verwijderObject(be);
-                omgeving.beweeg.verwijderObject(be);
+            BewegendDingExtra b = omgeving.specialeBeweegObjecten.get(teller);
+            if(omgeving.legoYoda.botstMet(b)){
+                omgeving.specialeBeweegObjecten.remove(b);
+                omgeving.tekenaar.verwijderObject(b);
+                omgeving.beweeg.verwijderObject(b);
                 omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.pacman.levens));
-                //omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens);
+                omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens);
                 omgeving.legoYoda.levens --;
             }else{
                 teller++;
