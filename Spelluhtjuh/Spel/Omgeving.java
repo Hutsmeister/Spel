@@ -33,7 +33,10 @@ public class Omgeving {
     public Gijs gijs;
     public Stijn stijn;
     public Achtergrond achtergrond;
+    public GameOver gameOver;
     public BestuurbaarDing pacman, legoYoda;
+    public Hart pacmanHart;
+    public Hart legoYodaHart;
     // ArrayList<Lift> liften;
     public ArrayList<Tafel> tafels;
     public ArrayList<Stoel> stoelen;
@@ -45,6 +48,7 @@ public class Omgeving {
     public ArrayList<Blokje> blokjes;
     public ArrayList<BewegendDing> beweegObjecten;
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
+    public ArrayList<BestuurbaarDing> bestuurbareDingen;
     public ArrayList<Hart> pacmanLevens; 
     public ArrayList<Hart> legoYodaLevens;
     public Geluid achtergrondGeluid;
@@ -64,6 +68,9 @@ public class Omgeving {
         // die de objecten maken.
         klok = new Klok(910, 64, 100, 50, 900);
         
+        gameOver = new GameOver(breedte, hoogte, Laden.laadPlaatje("plaatjes/gameOver.jpg"));
+
+        
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
         maakJochems();
@@ -80,6 +87,7 @@ public class Omgeving {
         maakLevens();
         voegAanTekenaarToe();
         voegAanBeweegToe();
+        //eindeSpel();
         achtergrondGeluid = new Geluid("geluiden/Mellohi.wav");
         achtergrondGeluid.speelInHerhaling();
     }
@@ -121,26 +129,23 @@ public class Omgeving {
         Image y = Laden.laadPlaatje("plaatjes/legoYoda.png");
         legoYodaLevens = new ArrayList<Hart>();
         pacmanLevens = new ArrayList<Hart>();
-        
-        pacmanLevens.add(new Hart(80, 20, 30, 30, p)); // icon pacman
-        legoYodaLevens.add(new Hart(80, 60, 30, 30, y)); // icon legoYoda
 
-        
-        
-        
-        
-        while(pacman.levens > 0){
-            pacmanLevens.add(new Hart(100 + 20 * pacman.levens, 20, 30, 30, h));
-            pacman.levens --;
+        pacmanHart = new Hart(80, 20, 30, 30, p); // icon pacman
+        legoYodaHart = new Hart(80, 60, 30, 30, y); // icon legoYoda
+
+        int teller = pacman.levens;
+        while(teller > 0){
+            pacmanLevens.add(new Hart(320 - 20 * teller, 20, 30, 30, h));
+            teller --;
         }
-        pacman.levens = 10;
-        while(legoYoda.levens > 0){
-            legoYodaLevens.add(new Hart(100 + 20 * legoYoda.levens, 60, 30, 30, h));
-            legoYoda.levens --;
+        teller = legoYoda.levens;
+        while(teller > 0){
+            legoYodaLevens.add(new Hart(320 - 20 * teller, 60, 30, 30, h));
+            teller --;
         }
-        legoYoda.levens = 10;
 
     }
+
     
     public void maakBestuurbareDingen(){
         Image p = Laden.laadPlaatje("plaatjes/pacman.png");
@@ -153,6 +158,8 @@ public class Omgeving {
         legoYoda = new BestuurbaarDing(200, 100, 250, y, false, 10); 
         legoYoda.register(this);
         legoYoda.defineKeys(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W, KeyEvent.VK_S);
+        bestuurbareDingen.add(pacman);
+        bestuurbareDingen.add(legoYoda);
     }
     public void maakBlokjes() {
         blokjes = new ArrayList<Blokje>();
@@ -187,11 +194,11 @@ public class Omgeving {
         //specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(200, 400), maakGetal(1, 1000), maakGetal(-200, 200), breedte, p));
         //specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 400), maakGetal(200, 600), maakGetal(-200, 200), breedte, p));
         int teller = 0;
-        while(teller < 3){
+        while(teller < 10){
             specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 1800), maakGetal(890, 930), maakGetal(200, 500), breedte, p));
             teller ++;
         }
-        
+
     }
     
     public void maakJochems(){
@@ -256,6 +263,36 @@ public class Omgeving {
             teller ++;
         }
     }
+    
+    public void eindeSpel(){
+        int totaleLevens = pacman.levens + legoYoda.levens;
+        if(totaleLevens == 0){
+            //tekenaar.verwijderObject(achtergrond);
+            // tekenaar.verwijderObject(sleutel);
+            // tekenaar.verwijderObject(gijs);
+            // tekenaar.verwijderObject(stijn);
+            // tekenaar.verwijderLijst(vloeren);
+            // tekenaar.verwijderLijst(wegen);
+            // tekenaar.verwijderLijst(specialeBeweegObjecten);
+            // tekenaar.verwijderLijst(jochems);
+            // tekenaar.verwijderLijst(blokjes);
+            // tekenaar.verwijderLijst(tafels);
+            // tekenaar.verwijderObject(klok);
+            // tekenaar.verwijderLijst(muren);
+            // tekenaar.verwijderLijst(pacmanLevens);
+            // tekenaar.verwijderLijst(legoYodaLevens);
+            // tekenaar.verwijderObject(pacmanHart);
+            // tekenaar.verwijderObject(legoYodaHart); 
+
+            // beweeg.verwijderLijst(specialeBeweegObjecten);
+            // beweeg.verwijderLijst(jochems);
+            // beweeg.verwijderObject(pacman);
+            // beweeg.verwijderObject(legoYoda);
+            // beweeg.verwijderObject(klok);
+
+            // tekenaar.voegObjectToe(gameOver);
+        }
+    }
 
     /**
      * Deze procedure voegt de gemaakte objecten aan de
@@ -265,6 +302,8 @@ public class Omgeving {
      *
      */
     private void voegAanTekenaarToe(){
+        //int totaleLevens = pacman.levens + legoYoda.levens;
+        
         tekenaar.voegObjectToe(achtergrond);
         tekenaar.voegObjectToe(sleutel);
         tekenaar.voegObjectToe(gijs);
@@ -282,6 +321,30 @@ public class Omgeving {
         tekenaar.voegLijstToe(muren);
         tekenaar.voegLijstToe(pacmanLevens); 
         tekenaar.voegLijstToe(legoYodaLevens);
+        tekenaar.voegObjectToe(pacmanHart);
+        tekenaar.voegObjectToe(legoYodaHart);
+        
+        // if(totaleLevens == 0){
+        // tekenaar.verwijderObject(achtergrond);
+        // tekenaar.verwijderObject(sleutel);
+        // tekenaar.verwijderObject(gijs);
+        // tekenaar.verwijderObject(stijn);
+        // tekenaar.verwijderLijst(vloeren);
+        // tekenaar.verwijderLijst(wegen);
+        // tekenaar.verwijderLijst(specialeBeweegObjecten);
+        // tekenaar.verwijderLijst(jochems);
+        // tekenaar.verwijderLijst(blokjes);
+        // tekenaar.verwijderLijst(tafels);
+        // tekenaar.voegLijstToe(bomen);
+        // tekenaar.verwijderObject(klok);
+        // tekenaar.verwijderLijst(muren);
+        // tekenaar.verwijderLijst(pacmanLevens);
+        // tekenaar.verwijderLijst(legoYodaLevens);
+        // tekenaar.verwijderObject(pacmanHart);
+        // tekenaar.verwijderObject(legoYodaHart);
+
+        // tekenaar.voegObjectToe(gameOver);
+        // }
     }   
     
     
@@ -294,11 +357,21 @@ public class Omgeving {
      */
 
     private void voegAanBeweegToe(){
+        //int totaleLevens = pacman.levens + legoYoda.levens;
+        
         beweeg.voegLijstToe(specialeBeweegObjecten);
         beweeg.voegLijstToe(jochems);
         beweeg.voegObjectToe(pacman);
         beweeg.voegObjectToe(legoYoda);
         beweeg.voegObjectToe(klok);
+        
+        // if(totaleLevens == 0){
+        // beweeg.verwijderLijst(specialeBeweegObjecten);
+        // beweeg.verwijderLijst(jochems);
+        // beweeg.verwijderObject(pacman);
+        // beweeg.verwijderObject(legoYoda);
+        // beweeg.verwijderObject(klok);
+        // }
     }
 
 }
