@@ -46,25 +46,27 @@ public class BestuurbaarDing extends BotsObject
     public void beweeg(float stap){
         bewaar();
         
-        if(omgeving.kb.isIngedrukt(links)){
-            x -= vx * stap;
-        }
-        if(omgeving.kb.isIngedrukt(rechts)){
-            x += vx * stap;
-        }
-        if(omgeving.kb.isIngedrukt(boven) && gesprongen == 0){
-            vy = -800;
-            if(omgeving.kb.isIngedrukt(boven) ){
-                vy = -800;
-                gesprongen = 1;
+        if(levens != 0){
+            if(omgeving.kb.isIngedrukt(links)){
+                x -= vx * stap;
             }
-        }
-        if(omgeving.kb.isIngedrukt(beneden)){
-            //y += vy * stap;
-        } 
+            if(omgeving.kb.isIngedrukt(rechts)){
+                x += vx * stap;
+            }
+            if(vy == 0){
+                if(omgeving.kb.isIngedrukt(boven) && gesprongen == 0){
+                    vy = -800;
+                    gesprongen = 1;
+                }
+            }
+            if(omgeving.kb.isIngedrukt(beneden)){
+                //y += vy * stap;
+            } 
         
-        vy += a;
-        y += vy * stap;
+
+            vy += a;
+            y += vy * stap;
+        }
         
         //botsen met sleutel
         Sleutel sleutel; 
@@ -81,33 +83,49 @@ public class BestuurbaarDing extends BotsObject
         
         while(teller < omgeving.specialeBeweegObjecten.size()){
             BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
-            if(omgeving.pacman.botstMet(be)){
-                omgeving.specialeBeweegObjecten.remove(be);
-                omgeving.tekenaar.verwijderObject(be);
-                omgeving.beweeg.verwijderObject(be);
-                omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens));
-                omgeving.pacmanLevens.remove(omgeving.pacman.levens);
-                omgeving.pacman.levens --;
-                g2.speelaf();
-            }else{
-                teller++;
+            
+            if(omgeving.pacman.levens != 0){
+                if(omgeving.pacman.botstMet(be)){
+                    omgeving.specialeBeweegObjecten.remove(be);
+                    omgeving.tekenaar.verwijderObject(be);
+                    omgeving.beweeg.verwijderObject(be);
+                    omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens-1));
+                    omgeving.pacmanLevens.remove(omgeving.pacman.levens-1);
+                    omgeving.pacman.levens --;
+                    g2.speelaf();
+
+                    if(omgeving.pacman.levens == 0){
+                        //omgeving.tekenaar.verwijderObject(omgeving.pacman);
+                        //omgeving.beweeg.verwijderObject(omgeving.pacman);
+                        omgeving.bestuurbareDingen.remove(omgeving.pacman);
+                    }
+
+                }else{
+                    teller++;
+                }
             }
+
+            if(omgeving.legoYoda.levens != 0){
+                if(omgeving.legoYoda.botstMet(be)){
+                    omgeving.specialeBeweegObjecten.remove(be);
+                    omgeving.tekenaar.verwijderObject(be);
+                    omgeving.beweeg.verwijderObject(be);
+                    omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.legoYoda.levens-1));
+                    omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens-1);
+                    omgeving.legoYoda.levens --;
+                    g2.speelaf();
+                    if(omgeving.legoYoda.levens == 0){
+                        //omgeving.tekenaar.verwijderObject(omgeving.legoYoda);
+                        //omgeving.beweeg.verwijderObject(omgeving.legoYoda);
+                        omgeving.bestuurbareDingen.remove(omgeving.legoYoda);
+                    }
+                }else{
+                    teller++;
+                }
+            }
+
         }
         
-        while(teller < omgeving.specialeBeweegObjecten.size()){
-            BewegendDingExtra b = omgeving.specialeBeweegObjecten.get(teller);
-            if(omgeving.legoYoda.botstMet(b)){
-                omgeving.specialeBeweegObjecten.remove(b);
-                omgeving.tekenaar.verwijderObject(b);
-                omgeving.beweeg.verwijderObject(b);
-                omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.pacman.levens));
-                omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens);
-                omgeving.legoYoda.levens --;
-                g2.speelaf();
-            }else{
-                teller++;
-            }
-        }
         
         /*
         teller = 0;
