@@ -78,6 +78,8 @@ public class Omgeving {
         maakLevens();
         voegAanTekenaarToe();
         voegAanBeweegToe();
+        achtergrondGeluid = new Geluid("geluiden/Mellohi.wav");
+        achtergrondGeluid.speelInHerhaling();
     }
     
       public void maakTafels(){
