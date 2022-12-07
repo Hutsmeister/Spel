@@ -46,7 +46,7 @@ public class Omgeving {
     public ArrayList<BewegendDingExtra> specialeBeweegObjecten;
     public ArrayList<Hart> pacmanLevens; 
     public ArrayList<Hart> legoYodaLevens;
-    public Geluid achtergrondgeluid;
+    public Geluid achtergrondGeluid;
     
     /**
      * Constructor voor de objecten van de klasse Omgeving
