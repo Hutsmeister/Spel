@@ -104,7 +104,8 @@ public class Omgeving {
         legoYodaLevens = new ArrayList<Hart>();
         pacmanLevens = new ArrayList<Hart>();
         
-        
+        pacmanLevens.add(new Hart(80, 20, 30, 30, p)); // icon pacman
+        legoYodaLevens.add(new Hart(80, 60, 30, 30, y)); // icon legoYoda
 
         
         
@@ -114,13 +115,13 @@ public class Omgeving {
             pacmanLevens.add(new Hart(100 + 20 * pacman.levens, 20, 30, 30, h));
             pacman.levens --;
         }
-        
+        pacman.levens = 10;
         while(legoYoda.levens > 0){
             legoYodaLevens.add(new Hart(100 + 20 * legoYoda.levens, 60, 30, 30, h));
             legoYoda.levens --;
         }
-        pacmanLevens.add(new Hart(80, 20, 30, 30, p)); // icon pacman
-        legoYodaLevens.add(new Hart(80, 60, 30, 30, y)); // icon legoYoda
+        legoYoda.levens = 10;
+
     }
     
     public void maakBestuurbareDingen(){
@@ -137,14 +138,15 @@ public class Omgeving {
     }
     public void maakBlokjes(){
         blokjes = new ArrayList<Blokje>();
-        blokjes.add(new Blokje(9,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(313,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(629,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(945,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(1261,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(1577,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(1893,978, 152, 12,Laden.laadPlaatje("plaatjes/rechthoek.png")));
-        blokjes.add(new Blokje(1640,173, 480, 43,Laden.laadPlaatje("plaatjes/rechthoek.png")));
+        Image b = Laden.laadPlaatje("plaatjes/rechthoek.png");
+        blokjes.add(new Blokje(9,978, 152, 12,b));
+        blokjes.add(new Blokje(313,978, 152, 12,b));
+        blokjes.add(new Blokje(629,978, 152, 12,b));
+        blokjes.add(new Blokje(945,978, 152, 12,b));
+        blokjes.add(new Blokje(1261,978, 152, 12,b));
+        blokjes.add(new Blokje(1577,978, 152, 12,b));
+        blokjes.add(new Blokje(1893,978, 152, 12,b));
+        blokjes.add(new Blokje(1640,173, 480, 43,b));
     }
 
 
