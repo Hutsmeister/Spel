@@ -38,6 +38,7 @@ public class Omgeving {
     public ArrayList<Tafel> tafels;
     public ArrayList<Stoel> stoelen;
     public ArrayList<Obstakel> vloeren;
+    public ArrayList<Boom> bomen;
     public ArrayList<Obstakel> muren;
     public ArrayList<Weg> wegen;
     public ArrayList<Jochem> jochems;
@@ -72,6 +73,7 @@ public class Omgeving {
         maakBlokjes();
         maakVloeren();
         maakWegen();
+        maakBomen();
         maakTafels();
         maakBestuurbareDingen();
         maakMuren();
@@ -90,6 +92,19 @@ public class Omgeving {
         tafels.add(new Tafel(400, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
         tafels.add(new Tafel(500, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
     } 
+    public void maakBomen(){
+        bomen = new ArrayList<Boom>();
+        bomen.add(new Boom(60, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(260, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(460, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(660, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(860, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(1060, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(1260, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(1460, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(1660, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+        bomen.add(new Boom(1860, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+    }
     
     public void maakMuren(){
         muren = new ArrayList<Obstakel>();
@@ -260,6 +275,7 @@ public class Omgeving {
         tekenaar.voegLijstToe(jochems);
         tekenaar.voegLijstToe(blokjes);
         tekenaar.voegLijstToe(tafels);
+        tekenaar.voegLijstToe(bomen);
         tekenaar.voegObjectToe(pacman);
         tekenaar.voegObjectToe(legoYoda);
         tekenaar.voegObjectToe(klok);
