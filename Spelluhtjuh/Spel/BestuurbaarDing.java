@@ -16,7 +16,7 @@ public class BestuurbaarDing extends BotsObject
     public double a;
     public boolean heeftSleutel;
     public int gesprongen;
-    public Geluid g1;
+    public Geluid g1, g2;
     
     
     public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
@@ -29,6 +29,7 @@ public class BestuurbaarDing extends BotsObject
         this.levens = levens; 
         gesprongen = 0;
         g1 = new Geluid("geluiden/pickupkey.wav");
+        g2 = new Geluid("geluiden/damage.wav");
     }
     
     public void register(Omgeving o){
