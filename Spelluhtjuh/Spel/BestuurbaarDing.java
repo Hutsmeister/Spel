@@ -68,6 +68,7 @@ public class BestuurbaarDing extends BotsObject
         //botsen met sleutel
         Sleutel sleutel; 
         if(botstMet(omgeving.sleutel)){
+           g1.speelaf();
            omgeving.tekenaar.verwijderObject(omgeving.sleutel);
            heeftSleutel = true;
            }
