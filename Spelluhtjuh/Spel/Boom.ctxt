@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Boom
+comment1.params=x\ y\ plaatje
+comment1.target=Boom(int,\ int,\ java.awt.Image)
+comment2.params=g
+comment2.target=void\ teken(java.awt.Graphics2D)
+numComments=3
