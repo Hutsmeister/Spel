@@ -88,6 +88,7 @@ public class BestuurbaarDing extends BotsObject
                 omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens));
                 omgeving.pacmanLevens.remove(omgeving.pacman.levens);
                 omgeving.pacman.levens --;
+                g2.speelaf();
             }else{
                 teller++;
             }
@@ -102,6 +103,7 @@ public class BestuurbaarDing extends BotsObject
                 omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.pacman.levens));
                 omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens);
                 omgeving.legoYoda.levens --;
+                g2.speelaf();
             }else{
                 teller++;
             }
