@@ -17,7 +17,7 @@ public class BestuurbaarDing extends BotsObject
     public boolean heeftSleutel;
     public int gesprongen;
     //public Geluid g1, g2;
-    
+
     public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
         super(x, y, 30, 30);
         vx = v;
@@ -78,7 +78,9 @@ public class BestuurbaarDing extends BotsObject
 
         int teller = 0;
         int totaleLevens = omgeving.pacman.levens + omgeving.legoYoda.levens;
-        if(totaleLevens > 1){
+
+        if(totaleLevens >= 1){
+
             while(teller < omgeving.specialeBeweegObjecten.size()){
                 BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
 
@@ -101,8 +103,9 @@ public class BestuurbaarDing extends BotsObject
                             omgeving.pacmanLevens.clear();
                         }
 
-                    }else{
-                        teller++;
+                        //                    }else{
+                        //teller++;
+
                     }
                 }
 
@@ -123,10 +126,14 @@ public class BestuurbaarDing extends BotsObject
                             omgeving.legoYoda.y = -200;
                             omgeving.legoYodaLevens.clear();
                         }
-                    }else{
-                        teller++;
+
+                        //                    }else{
+                        //                        teller++;
+
                     }
                 }
+
+                teller++;
 
             }
         }
