@@ -204,7 +204,7 @@ public class Omgeving {
     
     public void maakJochems(){
         jochems = new ArrayList<Jochem>();
-        Image j = Laden.laadPlaatje("plaatjes/Jochem.jpeg");
+        Image j = Laden.laadPlaatje("plaatjes/vliegende jochem.png");
         jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
         jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
         jochems.add(new Jochem(maakGetal(0, 1800), maakGetal(0, 600), maakGetal(100, 300), breedte, j));
