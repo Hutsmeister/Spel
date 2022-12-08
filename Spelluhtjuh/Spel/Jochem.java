@@ -1,3 +1,5 @@
+//author Felix
+
 package Spel;
 import java.awt.Color;
 import java.awt.Graphics2D;
