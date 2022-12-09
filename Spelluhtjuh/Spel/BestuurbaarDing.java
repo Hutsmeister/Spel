@@ -16,7 +16,7 @@ public class BestuurbaarDing extends BotsObject
     public double a;
     public boolean heeftSleutel;
     public int gesprongen;
-    
+
     //public Geluid g1, g2;
 
     public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
@@ -41,7 +41,6 @@ public class BestuurbaarDing extends BotsObject
         this.rechts = rechts;
         this.boven = boven;
         this.beneden = beneden;
-
     }
 
     public void beweeg(float stap){
@@ -79,7 +78,7 @@ public class BestuurbaarDing extends BotsObject
 
         int teller = 0;
         int totaleLevens = omgeving.pacman.levens + omgeving.legoYoda.levens;
-        
+
         if(totaleLevens >= 1){
             while(teller < omgeving.jochems.size()){
                 Jochem j = omgeving.jochems.get(teller);
@@ -120,7 +119,7 @@ public class BestuurbaarDing extends BotsObject
                 teller++;
             }
         }
-        
+
         if(totaleLevens >= 1){
 
             while(teller < omgeving.specialeBeweegObjecten.size()){
@@ -181,8 +180,7 @@ public class BestuurbaarDing extends BotsObject
 
             }
         }
-        
-        
+
         if(omgeving.dood == 2 || totaleLevens == 0){
             // tekenaar.verwijderObject(achtergrond);
             // tekenaar.verwijderObject(sleutel);
@@ -204,7 +202,6 @@ public class BestuurbaarDing extends BotsObject
 
             omgeving.tekenaar.voegObjectToe(omgeving.gameOver);
         }
-        
 
         /*
         teller = 0;
@@ -222,6 +219,7 @@ public class BestuurbaarDing extends BotsObject
         teller ++;
         }
          */
+
         teller = 0;
         if(levens != 0){
             while(teller < omgeving.vloeren.size()){
@@ -253,19 +251,21 @@ public class BestuurbaarDing extends BotsObject
                         zetxTerug();
                         //vx = 0;
                     }
-                    if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
+                    if(ikKomVan(o).equals("boven")){
                         zetyTerug();
                         vy = 0;
                         gesprongen = 0;
+                    }
+                    if(ikKomVan(o).equals("beneden")){
+                        zetyTerug();
+                        vy = -vy;
                     }
                 }
                 teller ++;
             }
         }
-        
-        
+
         //Stijn bevrijden
-        
         if(levens != 0){
             if(botstMet(omgeving.stijn)){
                 if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
@@ -280,12 +280,12 @@ public class BestuurbaarDing extends BotsObject
                 }
             }
         }
-        
+
         //Stijn bevrijden
-        
+
         if(levens != 0){
-             
-            if(botstMet(omgeving.stijn)){
+
+            if(botstMet(omgeving.stijn) ){
                 if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
                     zetxTerug();
                     omgeving.stijn.isGered = true;
@@ -298,13 +298,13 @@ public class BestuurbaarDing extends BotsObject
                 }
             }
         }
-        
-        
-        if(omgeving.stijn.isGered == true && heeftSleutel == true){
-            omgeving.tekenaar.voegObjectToe(omgeving.win);
+
+        if(heeftSleutel == true){
+            if(omgeving.stijn.isGered == true){
+                omgeving.tekenaar.voegObjectToe(omgeving.win);
+            }
         }
-        
-        
+
         /*
         teller = 0;
         while(teller < omgeving.BeweegObjecten.size()){
