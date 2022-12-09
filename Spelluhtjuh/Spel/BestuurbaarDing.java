@@ -69,7 +69,7 @@ public class BestuurbaarDing extends BotsObject
             y += vy * stap;
         }
         //botsen met sleutel
-        Sleutel sleutel; 
+        // Sleutel sleutel; 
         if(levens != 0){
             if(botstMet(omgeving.sleutel)){
                 omgeving.tekenaar.verwijderObject(omgeving.sleutel);
@@ -230,10 +230,14 @@ public class BestuurbaarDing extends BotsObject
                     if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
                         zetxTerug();
                     }
-                    if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
+                    if(ikKomVan(o).equals("boven")){
                         zetyTerug();
                         vy = 0;
                         gesprongen = 0;
+                    }
+                    if(ikKomVan(o).equals("beneden")){
+                        zetyTerug();
+                        vy = -vy;
                     }
                 }
                 teller ++;
@@ -280,12 +284,12 @@ public class BestuurbaarDing extends BotsObject
         //Stijn bevrijden
         
         if(levens != 0){
-            if(botstMet(omgeving.stijn)){
-                if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts") || heeftSleutel == true){
+            if(botstMet(omgeving.stijn) || heeftSleutel == true){
+                if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
                     zetxTerug();
                     omgeving.stijn.isGered = true;
                 }
-                if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden") || heeftSleutel == true){
+                if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden")){
                     zetyTerug();
                     vy = 0;
                     gesprongen = 0;
