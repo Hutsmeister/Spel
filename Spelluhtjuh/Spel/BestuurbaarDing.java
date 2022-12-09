@@ -284,7 +284,8 @@ public class BestuurbaarDing extends BotsObject
         //Stijn bevrijden
         
         if(levens != 0){
-            if(botstMet(omgeving.stijn) || heeftSleutel == true){
+             
+            if(botstMet(omgeving.stijn)){
                 if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
                     zetxTerug();
                     omgeving.stijn.isGered = true;
@@ -299,7 +300,7 @@ public class BestuurbaarDing extends BotsObject
         }
         
         
-        if(omgeving.stijn.isGered == true){
+        if(omgeving.stijn.isGered == true && heeftSleutel == true){
             omgeving.tekenaar.voegObjectToe(omgeving.win);
         }
         
