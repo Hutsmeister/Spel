@@ -190,7 +190,26 @@ public class BestuurbaarDing extends BotsObject
                 teller ++;
             }
         }
-
+        
+        
+        //Stijn bevrijden
+        
+        if(levens != 0){
+            if(botstMet(omgeving.stijn)){
+                if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
+                    zetxTerug();
+                    omgeving.stijn.isGered = true;
+                }
+                if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden")){
+                    zetyTerug();
+                    vy = 0;
+                    gesprongen = 0;
+                    omgeving.stijn.isGered = true;
+                }
+            }
+        }
+        
+        
         /*
         teller = 0;
         while(teller < omgeving.BeweegObjecten.size()){
