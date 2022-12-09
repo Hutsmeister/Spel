@@ -16,6 +16,7 @@ public class BestuurbaarDing extends BotsObject
     public double a;
     public boolean heeftSleutel;
     public int gesprongen;
+    
     //public Geluid g1, g2;
 
     public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
@@ -101,6 +102,7 @@ public class BestuurbaarDing extends BotsObject
                             omgeving.pacman.x = -100;
                             omgeving.pacman.y = -100;
                             omgeving.pacmanLevens.clear();
+                            omgeving.dood ++;
                         }
 
                         //                    }else{
@@ -125,6 +127,7 @@ public class BestuurbaarDing extends BotsObject
                             omgeving.legoYoda.x = -100;
                             omgeving.legoYoda.y = -200;
                             omgeving.legoYodaLevens.clear();
+                            omgeving.dood ++;
                         }
 
                         //                    }else{
@@ -137,6 +140,30 @@ public class BestuurbaarDing extends BotsObject
 
             }
         }
+        
+        
+        if(omgeving.dood == 2){
+            // tekenaar.verwijderObject(achtergrond);
+            // tekenaar.verwijderObject(sleutel);
+            // tekenaar.verwijderObject(gijs);
+            // tekenaar.verwijderObject(stijn);
+            // tekenaar.verwijderLijst(vloeren);
+            // tekenaar.verwijderLijst(wegen);
+            // tekenaar.verwijderLijst(specialeBeweegObjecten);
+            // tekenaar.verwijderLijst(jochems);
+            // tekenaar.verwijderLijst(blokjes);
+            // tekenaar.verwijderLijst(tafels);
+            // tekenaar.voegLijstToe(bomen);
+            // tekenaar.verwijderObject(klok);
+            // tekenaar.verwijderLijst(muren);
+            // tekenaar.verwijderLijst(pacmanLevens);
+            // tekenaar.verwijderLijst(legoYodaLevens);
+            // tekenaar.verwijderObject(pacmanHart);
+            // tekenaar.verwijderObject(legoYodaHart);
+
+            omgeving.tekenaar.voegObjectToe(omgeving.gameOver);
+        }
+        
 
         /*
         teller = 0;
