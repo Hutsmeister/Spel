@@ -239,6 +239,14 @@ public class Omgeving {
     public void maakVloeren(){
         vloeren = new ArrayList<Obstakel>();
         vloeren.add(new Obstakel(0, hoogte, breedte, 50, Color.black));
+        vloeren.add(new Obstakel(9,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(313,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(629,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(945,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(1261,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(1577,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(1893,978, 152, 12,Color.black));
+        vloeren.add(new Obstakel(1640,173, 480, 43,Color.black));
         //vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
         //vloeren.add(new Obstakel(breedte/2 - 50, hoogte/2 - 10, 100, 10, Color.black)); 
         //int teller = 0;
