@@ -79,7 +79,48 @@ public class BestuurbaarDing extends BotsObject
 
         int teller = 0;
         int totaleLevens = omgeving.pacman.levens + omgeving.legoYoda.levens;
+        
+        if(totaleLevens >= 1){
+            while(teller < omgeving.jochems.size()){
+                Jochem j = omgeving.jochems.get(teller);
+                if(omgeving.pacman.levens != 0){
+                    if(omgeving.pacman.botstMet(j)){
+                        omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens-1));
+                        omgeving.pacmanLevens.remove(omgeving.pacman.levens-1);
+                        omgeving.pacman.levens --;
+                        //g2.speelaf();
 
+                        if(omgeving.pacman.levens == 0){
+                            //omgeving.tekenaar.verwijderObject(omgeving.pacman);
+                            //omgeving.beweeg.verwijderObject(omgeving.pacman);
+                            //omgeving.bestuurbareDingen.remove(omgeving.pacman);
+                            omgeving.pacman.x = -100;
+                            omgeving.pacman.y = -100;
+                            omgeving.pacmanLevens.clear();
+                        }
+                    }
+                }
+
+                if(omgeving.legoYoda.levens != 0){
+                    if(omgeving.legoYoda.botstMet(j)){
+                        omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.legoYoda.levens-1));
+                        omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens-1);
+                        omgeving.legoYoda.levens --;
+                        //g2.speelaf();
+                        if(omgeving.legoYoda.levens == 0){
+                            //omgeving.tekenaar.verwijderObject(omgeving.legoYoda);
+                            //omgeving.beweeg.verwijderObject(omgeving.legoYoda);
+                            //omgeving.bestuurbareDingen.remove(omgeving.legoYoda);
+                            omgeving.legoYoda.x = -100;
+                            omgeving.legoYoda.y = -200;
+                            omgeving.legoYodaLevens.clear();
+                        }
+                    }
+                }
+                teller++;
+            }
+        }
+        
         if(totaleLevens >= 1){
 
             while(teller < omgeving.specialeBeweegObjecten.size()){
