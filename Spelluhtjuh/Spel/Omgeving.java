@@ -45,6 +45,7 @@ public class Omgeving {
     public ArrayList<Boom> bomen;
     public ArrayList<Obstakel> muren;
     public ArrayList<Weg> wegen;
+    public ArrayList<Lift> liften;
     public ArrayList<Jochem> jochems;
     public ArrayList<Blokje> blokjes;
     public ArrayList<BewegendDing> beweegObjecten;
@@ -82,6 +83,7 @@ public class Omgeving {
         maakVloeren();
         maakWegen();
         maakBomen();
+        maakLiften();
         maakTafels();
         maakBestuurbareDingen();
         maakMuren();
@@ -113,6 +115,11 @@ public class Omgeving {
         bomen.add(new Boom(1460, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
         bomen.add(new Boom(1660, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
         bomen.add(new Boom(1860, 814, 100, 100, Laden.laadPlaatje("plaatjes/boom.png")));
+    }
+    public void maakLiften(){
+        liften = new ArrayList<Lift>();
+        liften.add(new Lift(700, 0, 450, 100, 100, 0, 204, 255, this));
+        liften.add(new Lift(500, 0, 450, 100, 100, 0, 204, 255, this));
     }
     
     public void maakMuren(){
@@ -248,20 +255,11 @@ public class Omgeving {
         vloeren.add(new Obstakel(1577,978, 152, 12,Color.black));
         vloeren.add(new Obstakel(1893,978, 152, 12,Color.black));
         vloeren.add(new Obstakel(1640,173, 480, 43,Color.black));
-        //vloeren.add(new Obstakel(0, hoogte - 10, breedte, 10, Color.black));
-        //vloeren.add(new Obstakel(breedte/2 - 50, hoogte/2 - 10, 100, 10, Color.black)); 
-        //int teller = 0;
-        //while(teller < aantal){
-            //vloeren.add(new Obstakel(teller*100, hoogte - 50*teller, 50, 10, Color.black));
-           // teller ++;
-        //}
-        //int x_begin = teller*100;
-        //int y_begin = hoogte - 50*teller;
-        //teller = 0;
-        //while(teller < aantal){
-            //vloeren.add(new Obstakel(x_begin + teller*100, y_begin + 50*teller, 50, 10, Color.black));
-            //teller ++;
-        //}
+        
+        
+        vloeren.add(new Obstakel(0,700, 200, 15,Color.black));
+        vloeren.add(new Obstakel(250,600, 100, 15,Color.black));
+        vloeren.add(new Obstakel(500,500, 150, 15,Color.black));
     }
     
     public void maakWegen(){
@@ -319,6 +317,7 @@ public class Omgeving {
         tekenaar.voegObjectToe(gijs);
         tekenaar.voegObjectToe(stijn);
         tekenaar.voegLijstToe(vloeren);
+        tekenaar.voegLijstToe(liften);
         tekenaar.voegLijstToe(wegen);
         tekenaar.voegLijstToe(specialeBeweegObjecten);
         tekenaar.voegLijstToe(jochems);
@@ -372,6 +371,7 @@ public class Omgeving {
         beweeg.voegLijstToe(specialeBeweegObjecten);
         beweeg.voegLijstToe(jochems);
         beweeg.voegObjectToe(pacman);
+        beweeg.voegLijstToe(liften);
         beweeg.voegObjectToe(legoYoda);
         beweeg.voegObjectToe(klok);
         
