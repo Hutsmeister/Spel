@@ -277,6 +277,28 @@ public class BestuurbaarDing extends BotsObject
             }
         }
         
+        //Stijn bevrijden
+        
+        if(levens != 0){
+            if(botstMet(omgeving.stijn)){
+                if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts") || heeftSleutel == true){
+                    zetxTerug();
+                    omgeving.stijn.isGered = true;
+                }
+                if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden") || heeftSleutel == true){
+                    zetyTerug();
+                    vy = 0;
+                    gesprongen = 0;
+                    omgeving.stijn.isGered = true;
+                }
+            }
+        }
+        
+        
+        if(omgeving.stijn.isGered = true){
+            omgeving.tekenaar.voegObjectToe(omgeving.win);
+        }
+        
         
         /*
         teller = 0;
