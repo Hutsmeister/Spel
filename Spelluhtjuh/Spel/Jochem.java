@@ -43,11 +43,11 @@ public class Jochem extends BewegendDing{
         if(x < ymin){
             getalletje = maakGetal(0,1);
             if(getalletje == 0){
-              vx = maakGetal(200,0);
+              vx = maakGetal(0,200);
               vy = 200 - java.lang.Math.abs(vx);
             }
             if(getalletje == 1){
-              vy = maakGetal(200,0);
+              vy = maakGetal(0,200);
               vx = 200 - java.lang.Math.abs(vy);
             }
         }
