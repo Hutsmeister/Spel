@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Lift
+comment0.text=\r\n\ class\ Lift\ -\ geef\ hier\ een\ beschrijving\ van\ deze\ class\r\n\r\n\ @author\ (felix)\r\n\ @version\ (versie\ nummer\ of\ datum)\r\n
+comment1.params=max\ x\ y\ breedte\ vy\ r\ g\ b\ o
+comment1.target=Lift(int,\ int,\ int,\ int,\ float,\ int,\ int,\ int,\ Omgeving)
+comment2.params=stap
+comment2.target=void\ beweeg(float)
+comment3.params=g
+comment3.target=void\ teken(java.awt.Graphics2D)
+numComments=4
