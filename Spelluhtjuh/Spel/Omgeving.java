@@ -30,6 +30,7 @@ public class Omgeving {
      * enz.
      */
     public Sleutel sleutel;
+    public Win win;
     public Klok klok;
     public Gijs gijs;
     public Stijn stijn;
@@ -72,6 +73,7 @@ public class Omgeving {
         
         gameOver = new GameOver(breedte, hoogte, Laden.laadPlaatje("plaatjes/gameOver.jpg"));
 
+        win = new Win(breedte, hoogte, Laden.laadPlaatje("plaatjes/win.jpg"));
         
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
