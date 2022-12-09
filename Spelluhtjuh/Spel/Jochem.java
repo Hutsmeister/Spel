@@ -27,50 +27,50 @@ public class Jochem extends BewegendDing{
         //super.beweeg(stap);
         x += vx*stap;
         y += vy*stap;
-        minv = 90;
+        minv = 200;
         
         if(x < xmin){
             getalletje = maakGetal(0,1);
             if(getalletje == 0){
-              vx = maakGetal(90,0);
-              vy = 90 - java.lang.Math.abs(vx);
+              vx = maakGetal(0, 200);
+              vy = 200 - java.lang.Math.abs(vx);
             }
             if(getalletje == 1){
-              vy = maakGetal(90,0);
-              vx = 90 - java.lang.Math.abs(vy);
+              vy = maakGetal(0, 200);
+              vx = 200 - java.lang.Math.abs(vy);
             }
         }
         if(x < ymin){
             getalletje = maakGetal(0,1);
             if(getalletje == 0){
-              vx = maakGetal(90,0);
-              vy = 90 - java.lang.Math.abs(vx);
+              vx = maakGetal(200,0);
+              vy = 200 - java.lang.Math.abs(vx);
             }
             if(getalletje == 1){
-              vy = maakGetal(90,0);
-              vx = 90 - java.lang.Math.abs(vy);
+              vy = maakGetal(200,0);
+              vx = 200 - java.lang.Math.abs(vy);
             }
         }
         if(x > xmax){
             getalletje = maakGetal(0,1);
             if(getalletje == 0){
-              vx = maakGetal(-90,0);
-              vy = -90 + java.lang.Math.abs(vx);
+              vx = maakGetal(-200,0);
+              vy = -200 + java.lang.Math.abs(vx);
             }
             if(getalletje == 1){
-              vy = maakGetal(-90,0);
-              vx = -90 + java.lang.Math.abs(vy);
+              vy = maakGetal(-200,0);
+              vx = -200 + java.lang.Math.abs(vy);
             }
         }
         if(x > ymax){
             getalletje = maakGetal(0,1);
             if(getalletje == 0){
-              vx = maakGetal(-90,0);
-              vy = -90 + java.lang.Math.abs(vx);
+              vx = maakGetal(-200,0);
+              vy = -200 + java.lang.Math.abs(vx);
             }
             if(getalletje == 1){
-              vy = maakGetal(-90,0);
-              vx = -90 + java.lang.Math.abs(vy);
+              vy = maakGetal(-200,0);
+              vx = -200 + java.lang.Math.abs(vy);
             }
         }
        
