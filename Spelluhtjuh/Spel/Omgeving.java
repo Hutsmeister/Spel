@@ -205,7 +205,7 @@ public class Omgeving {
         //specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(200, 400), maakGetal(1, 1000), maakGetal(-200, 200), breedte, p));
         //specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 400), maakGetal(200, 600), maakGetal(-200, 200), breedte, p));
         int teller = 0;
-        while(teller < 20){
+        while(teller < 40){
             specialeBeweegObjecten.add(new BewegendDingExtra(maakGetal(100, 1800), maakGetal(890, 930), maakGetal(200, 500), breedte, p));
             teller ++;
         }
@@ -257,11 +257,13 @@ public class Omgeving {
         vloeren.add(new Obstakel(1577,978, 152, 12,Color.black));
         vloeren.add(new Obstakel(1893,978, 152, 12,Color.black));
         vloeren.add(new Obstakel(1640,173, 480, 43,Color.black));
+        vloeren.add(new Obstakel(1440,300, 680, 43,Color.black));
         
         
-        vloeren.add(new Obstakel(0,700, 200, 15,Color.black));
+        
+        vloeren.add(new Obstakel(0,800, 200, 15,Color.black));
         vloeren.add(new Obstakel(250,600, 100, 15,Color.black));
-        vloeren.add(new Obstakel(500,500, 150, 15,Color.black));
+        vloeren.add(new Obstakel(500,500, 1950, 15,Color.black));
     }
     
     public void maakWegen(){
