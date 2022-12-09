@@ -21,6 +21,7 @@ public class Omgeving {
     public Beweeg beweeg;
     public Keyboard kb;
     public Mouse muis;
+    public int dood = 0;
     /**
      * Declareer hieronder alle objecten die je in je spel nodig hebt
      * Bijvoorbeeld:
