@@ -40,7 +40,7 @@ public class Jochem extends BewegendDing{
               vx = 200 - java.lang.Math.abs(vy);
             }
         }
-        if(x < ymin){
+        if(y < ymin){
             getalletje = maakGetal(0,1);
             if(getalletje == 0){
               vx = maakGetal(0,200);
