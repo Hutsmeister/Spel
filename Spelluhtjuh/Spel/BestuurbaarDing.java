@@ -295,7 +295,7 @@ public class BestuurbaarDing extends BotsObject
         }
         
         
-        if(omgeving.stijn.isGered = true){
+        if(omgeving.stijn.isGered == true){
             omgeving.tekenaar.voegObjectToe(omgeving.win);
         }
         
