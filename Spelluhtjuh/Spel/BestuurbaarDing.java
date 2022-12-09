@@ -183,7 +183,7 @@ public class BestuurbaarDing extends BotsObject
         }
         
         
-        if(omgeving.dood == 2){
+        if(omgeving.dood == 2 || totaleLevens == 0){
             // tekenaar.verwijderObject(achtergrond);
             // tekenaar.verwijderObject(sleutel);
             // tekenaar.verwijderObject(gijs);
