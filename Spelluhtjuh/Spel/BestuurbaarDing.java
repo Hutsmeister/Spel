@@ -1,7 +1,5 @@
 //author Demi
 
-// BOTSMET
-
 package Spel;
 import Tools.*;
 import java.awt.Image;
@@ -19,7 +17,15 @@ public class BestuurbaarDing extends BotsObject
 
     //public Geluid g1, g2;
 
-    public BestuurbaarDing(int x, int y, float v, Image plaatje, boolean heeftSleutel, int levens){
+    //Toevoegen voor toestanden
+    public String[] toestandsverzameling;
+    public String[] eindtoestandsverzameling;
+    public String begintoestand, huidigetoestand;
+    public ArrayList<Image> plaatjes;
+
+    public String[] invoerverzameling;
+
+    public BestuurbaarDing(int x, int y, float v, boolean heeftSleutel, int levens, Image plaatje){
         super(x, y, 30, 30);
         vx = v;
         vy = v;
@@ -30,6 +36,28 @@ public class BestuurbaarDing extends BotsObject
         gesprongen = 0;
         //g1 = new Geluid("geluiden/pickupkey.wav");
         //g2 = new Geluid("geluiden/damage.wav");
+
+        definitieToestanden();
+        huidigetoestand = begintoestand;
+        laadplaatjes();
+        definitieInvoer();
+        this.plaatje = plaatjes.get(0);
+    }
+
+    private void laadplaatjes(){
+        plaatjes = new ArrayList<Image>();
+        plaatjes.add(Laden.laadPlaatje("plaatjes/pacman.png")); // 0
+        //plaatjes.add(Laden.laadPlaatje(""))                   // 1
+    }
+
+    private void definitieToestanden(){
+        toestandsverzameling = new String[] {"stil", "links" , "rechts" , "val" , "buk" , "spring"};
+        begintoestand = toestandsverzameling[0];
+        eindtoestandsverzameling = new String[] {toestandsverzameling[0]};
+    }
+
+    private void definitieInvoer(){
+        invoerverzameling = new String[] {"li" , "re" , "nli" , "nre" , "gv" , "bmv" , "up" , "uplos"};        
     }
 
     public void register(Omgeving o){
@@ -48,283 +76,295 @@ public class BestuurbaarDing extends BotsObject
             bewaar();
         }
         if(levens != 0){
-            if(omgeving.kb.isIngedrukt(links)){
-                x -= vx * stap;
-            }
-            if(omgeving.kb.isIngedrukt(rechts)){
-                x += vx * stap;
-            }
-            if(vy == 0){
-                if(omgeving.kb.isIngedrukt(boven) && gesprongen == 0){
-                    vy = -800;
-                    gesprongen = 1;
+            String input = "";
+            if(huidigetoestand.equals(toestandsverzameling[0])){ // stil
+                plaatje = plaatjes.get(0);
+                if(omgeving.kb.isIngedrukt(links)){
+                    input = invoerverzameling[0]; //input 1:
+                    huidigetoestand = toestandsverzameling[1]; // toestand Tinks
+                    plaatje = plaatjes.get(1);
+                    x -= vx*stap; // actie
+                }
+                if(omgeving.kb.isIngedrukt(rechts)){
+                    input = invoerverzameling[1]; //input re
+                    huidigetoestand = toestandsverzameling[2]; // toestend rechts
+                    plaatje = plaatjes.get(2);
+                    x += vx*stap;
+                }
+                // if(omgeving.kb.isIngedrukt(buk)) {
+                    // input = invoerverzameling[6]; //input up knop
+                    // huidigetoestand = toestandsverzameling[4]; // toestand rechts
+                    // plaatje = plaatjes.get(4);
+                    // // geen actie nodig
+                // }
+                if(!isVloer(stap)){
+                    input = invoerverzameling[4]; //input yn
+                    huidigetoestand = toestandsverzameling[3]; // toestand val
+                    plaatje = plaatjes.get(3);
+                    // De actie al uitgevoerd
                 }
             }
-            if(omgeving.kb.isIngedrukt(beneden)){
-                //y += vy * stap;
-            } 
-
-            vy += a;
-            y += vy * stap;
-        }
-        //botsen met sleutel
-        // Sleutel sleutel; 
-        if(levens != 0){
-            if(botstMet(omgeving.sleutel)){
-                omgeving.tekenaar.verwijderObject(omgeving.sleutel);
-                heeftSleutel = true;
+            //botsen met sleutel
+            // Sleutel sleutel; 
+            if(levens != 0){
+                if(botstMet(omgeving.sleutel)){
+                    omgeving.tekenaar.verwijderObject(omgeving.sleutel);
+                    omgeving.tekenaar.voegObjectToe(omgeving.sleutelOpgepakt);
+                    omgeving.sleutel.isOpgepakt = true;
+                    heeftSleutel = true;
+                }
             }
-        }
 
-        int teller = 0;
-        int totaleLevens = omgeving.pacman.levens + omgeving.legoYoda.levens;
+            int teller = 0;
+            int totaleLevens = omgeving.pacman.levens; //+ omgeving.legoYoda.levens;
 
-        if(totaleLevens >= 1){
-            while(teller < omgeving.jochems.size()){
-                Jochem j = omgeving.jochems.get(teller);
-                if(omgeving.pacman.levens != 0){
-                    if(omgeving.pacman.botstMet(j)){
-                        omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens-1));
-                        omgeving.pacmanLevens.remove(omgeving.pacman.levens-1);
-                        omgeving.pacman.levens --;
-                        //g2.speelaf();
+            if(totaleLevens >= 1){
+                while(teller < omgeving.jochems.size()){
+                    Jochem j = omgeving.jochems.get(teller);
+                    if(omgeving.pacman.levens != 0){
+                        if(omgeving.pacman.botstMet(j)){
+                            omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens-1));
+                            omgeving.pacmanLevens.remove(omgeving.pacman.levens-1);
+                            omgeving.pacman.levens --;
+                            //g2.speelaf();
 
-                        if(omgeving.pacman.levens == 0){
-                            //omgeving.tekenaar.verwijderObject(omgeving.pacman);
-                            //omgeving.beweeg.verwijderObject(omgeving.pacman);
-                            //omgeving.bestuurbareDingen.remove(omgeving.pacman);
-                            omgeving.pacman.x = -100;
-                            omgeving.pacman.y = -100;
-                            omgeving.pacmanLevens.clear();
+                            if(omgeving.pacman.levens == 0){
+                                //omgeving.tekenaar.verwijderObject(omgeving.pacman);
+                                //omgeving.beweeg.verwijderObject(omgeving.pacman);
+                                //omgeving.bestuurbareDingen.remove(omgeving.pacman);
+                                omgeving.pacman.x = -100;
+                                omgeving.pacman.y = -100;
+                                omgeving.pacmanLevens.clear();
+                            }
                         }
                     }
-                }
 
-                if(omgeving.legoYoda.levens != 0){
-                    if(omgeving.legoYoda.botstMet(j)){
-                        omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.legoYoda.levens-1));
-                        omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens-1);
-                        omgeving.legoYoda.levens --;
-                        //g2.speelaf();
-                        if(omgeving.legoYoda.levens == 0){
-                            //omgeving.tekenaar.verwijderObject(omgeving.legoYoda);
-                            //omgeving.beweeg.verwijderObject(omgeving.legoYoda);
-                            //omgeving.bestuurbareDingen.remove(omgeving.legoYoda);
-                            omgeving.legoYoda.x = -100;
-                            omgeving.legoYoda.y = -200;
-                            omgeving.legoYodaLevens.clear();
-                        }
-                    }
+                    // if(omgeving.legoYoda.levens != 0){
+                    // if(omgeving.legoYoda.botstMet(j)){
+                    // omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.legoYoda.levens-1));
+                    // omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens-1);
+                    // omgeving.legoYoda.levens --;
+                    // //g2.speelaf();
+                    // if(omgeving.legoYoda.levens == 0){
+                    // //omgeving.tekenaar.verwijderObject(omgeving.legoYoda);
+                    // //omgeving.beweeg.verwijderObject(omgeving.legoYoda);
+                    // //omgeving.bestuurbareDingen.remove(omgeving.legoYoda);
+                    // omgeving.legoYoda.x = -100;
+                    // omgeving.legoYoda.y = -200;
+                    // omgeving.legoYodaLevens.clear();
+                    // }
+                    // }
+                    //}
+                    teller++;
                 }
-                teller++;
             }
-        }
 
-        if(totaleLevens >= 1){
+            if(totaleLevens >= 1){
 
-            while(teller < omgeving.specialeBeweegObjecten.size()){
-                BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
+                while(teller < omgeving.specialeBeweegObjecten.size()){
+                    BewegendDingExtra be = omgeving.specialeBeweegObjecten.get(teller);
 
-                if(omgeving.pacman.levens != 0){
-                    if(omgeving.pacman.botstMet(be)){
-                        omgeving.specialeBeweegObjecten.remove(be);
-                        omgeving.tekenaar.verwijderObject(be);
-                        omgeving.beweeg.verwijderObject(be);
-                        omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens-1));
-                        omgeving.pacmanLevens.remove(omgeving.pacman.levens-1);
-                        omgeving.pacman.levens --;
-                        //g2.speelaf();
+                    if(omgeving.pacman.levens != 0){
+                        if(omgeving.pacman.botstMet(be)){
+                            omgeving.specialeBeweegObjecten.remove(be);
+                            omgeving.tekenaar.verwijderObject(be);
+                            omgeving.beweeg.verwijderObject(be);
+                            omgeving.tekenaar.verwijderObject(omgeving.pacmanLevens.get(omgeving.pacman.levens-1));
+                            omgeving.pacmanLevens.remove(omgeving.pacman.levens-1);
+                            omgeving.pacman.levens --;
+                            //g2.speelaf();
 
-                        if(omgeving.pacman.levens == 0){
-                            //omgeving.tekenaar.verwijderObject(omgeving.pacman);
-                            //omgeving.beweeg.verwijderObject(omgeving.pacman);
-                            //omgeving.bestuurbareDingen.remove(omgeving.pacman);
-                            omgeving.pacman.x = -100;
-                            omgeving.pacman.y = -100;
-                            omgeving.pacmanLevens.clear();
-                            omgeving.dood ++;
+                            if(omgeving.pacman.levens == 0){
+                                //omgeving.tekenaar.verwijderObject(omgeving.pacman);
+                                //omgeving.beweeg.verwijderObject(omgeving.pacman);
+                                //omgeving.bestuurbareDingen.remove(omgeving.pacman);
+                                omgeving.pacman.x = -100;
+                                omgeving.pacman.y = -100;
+                                omgeving.pacmanLevens.clear();
+                                omgeving.dood ++;
+                            }
+
+                            //                    }else{
+                            //teller++;
+
                         }
-
-                        //                    }else{
-                        //teller++;
-
                     }
+
+                    // if(omgeving.legoYoda.levens != 0){
+                    // if(omgeving.legoYoda.botstMet(be)){
+                    // omgeving.specialeBeweegObjecten.remove(be);
+                    // omgeving.tekenaar.verwijderObject(be);
+                    // omgeving.beweeg.verwijderObject(be);
+                    // omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.legoYoda.levens-1));
+                    // omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens-1);
+                    // omgeving.legoYoda.levens --;
+                    // //g2.speelaf();
+                    // if(omgeving.legoYoda.levens == 0){
+                    // //omgeving.tekenaar.verwijderObject(omgeving.legoYoda);
+                    // //omgeving.beweeg.verwijderObject(omgeving.legoYoda);
+                    // //omgeving.bestuurbareDingen.remove(omgeving.legoYoda);
+                    // omgeving.legoYoda.x = -100;
+                    // omgeving.legoYoda.y = -200;
+                    // omgeving.legoYodaLevens.clear();
+                    // omgeving.dood ++;
+                    // }
+
+                    // //                    }else{
+                    // //                        teller++;
+
+                    // }
+                    // }
+
+                    teller++;
+
                 }
-
-                if(omgeving.legoYoda.levens != 0){
-                    if(omgeving.legoYoda.botstMet(be)){
-                        omgeving.specialeBeweegObjecten.remove(be);
-                        omgeving.tekenaar.verwijderObject(be);
-                        omgeving.beweeg.verwijderObject(be);
-                        omgeving.tekenaar.verwijderObject(omgeving.legoYodaLevens.get(omgeving.legoYoda.levens-1));
-                        omgeving.legoYodaLevens.remove(omgeving.legoYoda.levens-1);
-                        omgeving.legoYoda.levens --;
-                        //g2.speelaf();
-                        if(omgeving.legoYoda.levens == 0){
-                            //omgeving.tekenaar.verwijderObject(omgeving.legoYoda);
-                            //omgeving.beweeg.verwijderObject(omgeving.legoYoda);
-                            //omgeving.bestuurbareDingen.remove(omgeving.legoYoda);
-                            omgeving.legoYoda.x = -100;
-                            omgeving.legoYoda.y = -200;
-                            omgeving.legoYodaLevens.clear();
-                            omgeving.dood ++;
-                        }
-
-                        //                    }else{
-                        //                        teller++;
-
-                    }
-                }
-
-                teller++;
-
             }
-        }
 
-        if(omgeving.dood == 2 || totaleLevens == 0){
-            // tekenaar.verwijderObject(achtergrond);
-            // tekenaar.verwijderObject(sleutel);
-            // tekenaar.verwijderObject(gijs);
-            // tekenaar.verwijderObject(stijn);
-            // tekenaar.verwijderLijst(vloeren);
-            // tekenaar.verwijderLijst(wegen);
-            // tekenaar.verwijderLijst(specialeBeweegObjecten);
-            // tekenaar.verwijderLijst(jochems);
-            // tekenaar.verwijderLijst(blokjes);
-            // tekenaar.verwijderLijst(tafels);
-            // tekenaar.voegLijstToe(bomen);
-            // tekenaar.verwijderObject(klok);
-            // tekenaar.verwijderLijst(muren);
-            // tekenaar.verwijderLijst(pacmanLevens);
-            // tekenaar.verwijderLijst(legoYodaLevens);
-            // tekenaar.verwijderObject(pacmanHart);
-            // tekenaar.verwijderObject(legoYodaHart);
+            if(omgeving.dood == 2 || totaleLevens == 0){
+                // tekenaar.verwijderObject(achtergrond);
+                // tekenaar.verwijderObject(sleutel);
+                // tekenaar.verwijderObject(gijs);
+                // tekenaar.verwijderObject(stijn);
+                // tekenaar.verwijderLijst(vloeren);
+                // tekenaar.verwijderLijst(wegen);
+                // tekenaar.verwijderLijst(specialeBeweegObjecten);
+                // tekenaar.verwijderLijst(jochems);
+                // tekenaar.verwijderLijst(blokjes);
+                // tekenaar.verwijderLijst(tafels);
+                // tekenaar.voegLijstToe(bomen);
+                // tekenaar.verwijderObject(klok);
+                // tekenaar.verwijderLijst(muren);
+                // tekenaar.verwijderLijst(pacmanLevens);
+                // tekenaar.verwijderLijst(legoYodaLevens);
+                // tekenaar.verwijderObject(pacmanHart);
+                // tekenaar.verwijderObject(legoYodaHart);
 
-            omgeving.tekenaar.voegObjectToe(omgeving.gameOver);
-        }
+                omgeving.tekenaar.voegObjectToe(omgeving.gameOver);
+            }
 
-        /*
-        teller = 0;
-        while(teller < omgeving.obstakels.size()){
-        Obstakel o = omgeving.obstakels.get(teller);
-        if(botstMet(o)){
-        if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
-        zetxTerug();
-        }
-        if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
-        zetyTerug();
-        vy = 0;
-        }
-        }
-        teller ++;
-        }
-         */
+            /*
+            teller = 0;
+            while(teller < omgeving.obstakels.size()){
+            Obstakel o = omgeving.obstakels.get(teller);
+            if(botstMet(o)){
+            if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
+            zetxTerug();
+            }
+            if(ikKomVan(o).equals("boven")|| ikKomVan(o).equals("beneden")){
+            zetyTerug();
+            vy = 0;
+            }
+            }
+            teller ++;
+            }
+             */
 
-        teller = 0;
-        if(levens != 0){
-            while(teller < omgeving.vloeren.size()){
-                Obstakel o = omgeving.vloeren.get(teller);
-                if(botstMet(o)){
-                    if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
+            teller = 0;
+            if(levens != 0){
+                while(teller < omgeving.vloeren.size()){
+                    Obstakel o = omgeving.vloeren.get(teller);
+                    if(botstMet(o)){
+                        if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
+                            zetxTerug();
+                        }
+                        if(ikKomVan(o).equals("boven")){
+                            zetyTerug();
+                            vy = 0;
+                            gesprongen = 0;
+                        }
+                        if(ikKomVan(o).equals("beneden")){
+                            zetyTerug();
+                            vy = -vy;
+                        }
+                    }
+                    teller ++;
+                }
+            }
+
+            teller = 0;
+            if(levens != 0){
+                while(teller < omgeving.muren.size()){
+                    Obstakel o = omgeving.muren.get(teller);
+                    if(botstMet(o)){
+                        if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
+                            zetxTerug();
+                            //vx = 0;
+                        }
+                        if(ikKomVan(o).equals("boven")){
+                            zetyTerug();
+                            vy = 0;
+                            gesprongen = 0;
+                        }
+                        if(ikKomVan(o).equals("beneden")){
+                            zetyTerug();
+                            vy = -vy;
+                        }
+                    }
+                    teller ++;
+                }
+            }
+
+            //Stijn bevrijden
+            if(levens != 0){
+                if(botstMet(omgeving.stijn)){
+                    if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
                         zetxTerug();
+                        omgeving.stijn.isGered = true;
                     }
-                    if(ikKomVan(o).equals("boven")){
+                    if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden")){
                         zetyTerug();
                         vy = 0;
                         gesprongen = 0;
-                    }
-                    if(ikKomVan(o).equals("beneden")){
-                        zetyTerug();
-                        vy = -vy;
+                        omgeving.stijn.isGered = true;
                     }
                 }
-                teller ++;
             }
-        }
 
-        teller = 0;
-        if(levens != 0){
-            while(teller < omgeving.muren.size()){
-                Obstakel o = omgeving.muren.get(teller);
-                if(botstMet(o)){
-                    if(ikKomVan(o).equals("links")|| ikKomVan(o).equals("rechts")){
+            //Stijn bevrijden
+
+            if(levens != 0){
+
+                if(botstMet(omgeving.stijn) ){
+                    if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
                         zetxTerug();
-                        //vx = 0;
+                        omgeving.stijn.isGered = true;
                     }
-                    if(ikKomVan(o).equals("boven")){
+                    if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden")){
                         zetyTerug();
                         vy = 0;
                         gesprongen = 0;
-                    }
-                    if(ikKomVan(o).equals("beneden")){
-                        zetyTerug();
-                        vy = -vy;
+                        omgeving.stijn.isGered = true;
                     }
                 }
-                teller ++;
-            }
-        }
 
-        //Stijn bevrijden
-        if(levens != 0){
-            if(botstMet(omgeving.stijn)){
-                if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
-                    zetxTerug();
-                    omgeving.stijn.isGered = true;
-                }
-                if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden")){
-                    zetyTerug();
-                    vy = 0;
-                    gesprongen = 0;
-                    omgeving.stijn.isGered = true;
+            }
+            if(heeftSleutel == true){
+                if(omgeving.stijn.isGered == true){
+                    omgeving.tekenaar.voegObjectToe(omgeving.win);
                 }
             }
-        }
 
-        //Stijn bevrijden
-
-        if(levens != 0){
-
-            if(botstMet(omgeving.stijn) ){
-                if(ikKomVan(omgeving.stijn).equals("links")|| ikKomVan(omgeving.stijn).equals("rechts")){
-                    zetxTerug();
-                    omgeving.stijn.isGered = true;
-                }
-                if(ikKomVan(omgeving.stijn).equals("boven")|| ikKomVan(omgeving.stijn).equals("beneden")){
-                    zetyTerug();
-                    vy = 0;
-                    gesprongen = 0;
-                    omgeving.stijn.isGered = true;
-                }
+            /*
+            teller = 0;
+            while(teller < omgeving.BeweegObjecten.size()){
+            BewegendDing bb = omgeving.BeweegObjecten.get(teller);
+            if(botstMet(bb)){
+            if(ikKomVan(bb).equals("links")){
+            bb.x = x + breedte;
             }
-        }
-
-        if(heeftSleutel == true){
-            if(omgeving.stijn.isGered == true){
-                omgeving.tekenaar.voegObjectToe(omgeving.win);
+            if(ikKomVan(bb).equals("rechts")){
+            bb.x = x - breedte;
             }
-        }
+            if(ikKomVan(bb).equals("boven") || ikKomVan(bb).equals("beneden")){
+            zetyTerug();
+            vy = 0;
+            }
+            }
+            teller ++;
+            }
+             */
 
-        /*
-        teller = 0;
-        while(teller < omgeving.BeweegObjecten.size()){
-        BewegendDing bb = omgeving.BeweegObjecten.get(teller);
-        if(botstMet(bb)){
-        if(ikKomVan(bb).equals("links")){
-        bb.x = x + breedte;
         }
-        if(ikKomVan(bb).equals("rechts")){
-        bb.x = x - breedte;
-        }
-        if(ikKomVan(bb).equals("boven") || ikKomVan(bb).equals("beneden")){
-        zetyTerug();
-        vy = 0;
-        }
-        }
-        teller ++;
-        }
-         */
-
     }
 
     public void teken(Graphics2D g){
