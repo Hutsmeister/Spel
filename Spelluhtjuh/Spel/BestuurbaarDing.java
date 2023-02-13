@@ -84,6 +84,7 @@ public class BestuurbaarDing extends BotsObject
                 vy = 0;
             }
         }
+        return antwoord;
     }
     
     public void beweeg(float stap){
