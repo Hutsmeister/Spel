@@ -71,6 +71,21 @@ public class BestuurbaarDing extends BotsObject
         this.beneden = beneden;
     }
 
+    private boolean isVLoer(float stap){
+        boolean antwoord = false;
+        int teller = 0;
+        vy += a;
+        y += vy*stap;
+        while(teller < omgeving.vloeren.size()){
+            Obstakel vl = omgeving.vloeren.get(teller);
+            if(botstMet(vl)){
+                antwoord = true;
+                zetyTerug();
+                vy = 0;
+            }
+        }
+    }
+    
     public void beweeg(float stap){
         if(levens!=0){
             bewaar();
@@ -102,6 +117,27 @@ public class BestuurbaarDing extends BotsObject
                     huidigetoestand = toestandsverzameling[3]; // toestand val
                     plaatje = plaatjes.get(3);
                     // De actie al uitgevoerd
+                }
+            } else if(huidigetoestand.equals(toestandsverzameling[3])){
+                plaatje = plaatjes.get(3);
+                if(isVloer(stap)){
+                    input = invoerverzameling[5];
+                    huidigetoestand = toestandsverzameling[0];
+                    plaatjes.get(0);
+                }
+                
+            } else if(huidigetoestand.equals(toestandsverzameling[4])){
+                plaatje = plaatjes.get(4);
+                if(isVloer(stap)){
+                    input = invoerverzameling[5];
+                    huidigetoestand = toestandsverzameling[5];
+                    vy = -600;
+                }
+            }else if(huidigetoestand.equals(toestandsverzameling[5])){
+                plaatje = plaatjes.get(5);
+                if(isVloer(stap)){
+                    input = invoerverzameling[4];
+                    huidigetoestand = toestandsverzameling[3];
                 }
             }
             //botsen met sleutel
