@@ -71,7 +71,7 @@ public class BestuurbaarDing extends BotsObject
         this.beneden = beneden;
     }
 
-    private boolean isVLoer(float stap){
+    private boolean isVloer(float stap){
         boolean antwoord = false;
         int teller = 0;
         vy += a;
