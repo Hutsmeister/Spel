@@ -113,10 +113,10 @@ public class BestuurbaarDing extends BotsObject
                     // plaatje = plaatjes.get(4);
                     // // geen actie nodig
                 // }
-                if(!isVloer(stap)){
-                    input = invoerverzameling[4]; //input yn
-                    huidigetoestand = toestandsverzameling[3]; // toestand val
-                    plaatje = plaatjes.get(3);
+                //if(!isVloer(stap)){
+                   // input = invoerverzameling[4]; //input yn
+                   // huidigetoestand = toestandsverzameling[3]; // toestand val
+                   // plaatje = plaatjes.get(3);
                     // De actie al uitgevoerd
                 }
             } else if(huidigetoestand.equals(toestandsverzameling[3])){
