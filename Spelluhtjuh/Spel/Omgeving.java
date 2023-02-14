@@ -30,7 +30,7 @@ public class Omgeving {
      * enz.
      */
     
-
+    //public Controller controller;
     
     public Sleutel sleutel;
     public Sleutel sleutelOpgepakt;
@@ -71,6 +71,11 @@ public class Omgeving {
         this.beweeg = b;
         kb = k;
         muis = m;
+        
+        //controller maken die zorgt voor toestandsveranderingen
+        //controller = new Controller(this);
+        //beweeg.voegObjectToe(controller);
+        
         // geef hier de opdracthen om de methoden uit te voeren
         // die de objecten maken.
         klok = new Klok(910, 64, 100, 50, 900);
