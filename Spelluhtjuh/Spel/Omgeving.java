@@ -29,6 +29,9 @@ public class Omgeving {
      * public ArrayList<AnderDing> andereDingen
      * enz.
      */
+    
+
+    
     public Sleutel sleutel;
     public Sleutel sleutelOpgepakt;
     public Win win;
@@ -37,7 +40,7 @@ public class Omgeving {
     public Stijn stijn;
     public Achtergrond achtergrond;
     public GameOver gameOver;
-    public BestuurbaarDing pacman; //, legoYoda;
+    public BestuurbaarDing pacman, legoYoda;
     public Hart pacmanHart;
     public Hart legoYodaHart;
     // ArrayList<Lift> liften;
@@ -76,6 +79,8 @@ public class Omgeving {
 
         win = new Win(breedte, hoogte, Laden.laadPlaatje("plaatjes/win.jpg"));
         
+        // maakSpeler();
+        
         maakAchtergrond();
         maakSpecialeBeweegObjecten();
         maakJochems();
@@ -97,7 +102,130 @@ public class Omgeving {
         // achtergrondGeluid = new Geluid("geluiden/Mellohi.wav");
         // achtergrondGeluid.speelInHerhaling();
     }
-    
+    // public void maakSpeler(){
+        // speler = new BestuurbaarDing(200, 200, 500, 500, 0, Laden.laadPlaatje("plaatjes/speler0.png"));
+        // speler.registreer(this);
+        // speler.defineerToetsen(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP, KeyEvent.VK_DOWN);
+        // tekenaar.voegObjectToe(speler);
+        // beweeg.voegObjectToe(speler);
+    // }
+    // public void veranderSpeler(int level){
+        // speler.plaatje = Laden.laadPlaatje("plaatjes/speler"+level+".png");
+        // tekenaar.verwijderObject(speler);
+        // tekenaar.voegObjectToe(speler);
+        // if (level == 0){
+            // speler.x = 200;
+            // speler.y = 200;
+            // speler.breedte = 500;
+            // speler.hoogte = 500;
+            // speler.vx = 0;
+            // speler.vy = 0;
+        // } else if (level == 1){
+            // speler.x = 200;
+            // speler.y = 200;
+            // speler.breedte = 50;
+            // speler.hoogte = 100;
+            // speler.vx = 50;
+            // speler.vy = 50;
+            
+        // } else if (level == 2){
+            // speler.x = 300;
+            // speler.y = 300;
+            // speler.breedte = 50;
+            // speler.hoogte = 100;
+            // speler.vx = 50;
+            // speler.vy = 50;
+        // }else if (level == 3){
+            // speler.x = 100;
+            // speler.y = 100;
+            // speler.breedte = 500;
+            // speler.hoogte = 100;
+            // speler.vx = 50;
+            // speler.vy = 50;
+        // }
+    // }
+    // public void maakObstakels(int level){
+        // if(obstakels == null){
+            // obstakels = new ArrayList<Obstakel>();
+        // } else {
+            // tekenaar.verwijderLijst(obstakels);
+            // obstakels.clear();
+        // }
+        // Image p = Laden.laadPlaatje("plaatjes/obstakel"+level+".png");
+        // String[] regels = Laden.laadTextFile("omgevingen/obstakels"+level+".txt").split("\n");
+        // int teller = 0;
+        // while(teller < regels.length){
+            // int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" ", ""));
+            // int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" ", ""));
+            // int b = Integer.parseInt(regels[teller].split(",")[2].replaceAll(" ", ""));
+            // int h = Integer.parseInt(regels[teller].split(",")[3].replaceAll(" ", ""));
+            // obstakels.add(new Obstakel(x,y,b,h,p));
+            // teller ++; 
+        // }
+        // tekenaar.voegLijstToe(obstakels);
+    // }
+    // public void maakMuren(int level){
+        // if(muren == null){
+            // muren = new ArrayList<Obstakel>();
+        // } else {
+            // tekenaar.verwijderLijst(muren);
+            // muren.clear();
+        // }
+        // Image p = Laden.laadPlaatje("plaatjes/muur.png");
+        // String[] regels = Laden.laadTextFile("omgevingen/muren"+level+".txt").split("\n");
+        // int teller = 0;
+        // while(teller < regels.length){
+            // int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" ", ""));
+            // int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" ", ""));
+            // int b = Integer.parseInt(regels[teller].split(",")[2].replaceAll(" ", ""));
+            // int h = Integer.parseInt(regels[teller].split(",")[3].replaceAll(" ", ""));
+            // muren.add(new Obstakel(x,y,b,h,p));
+            // teller ++; 
+        // }
+        // tekenaar.voegLijstToe(muren);
+    // }
+    // public void maakVloeren(int level){
+        // if(vloeren == null){
+            // vloeren = new ArrayList<Obstakel>();
+        // } else {
+            // tekenaar.verwijderLijst(vloeren);
+            // vloeren.clear();
+        // }
+        // Image p = Laden.laadPlaatje("plaatjes/vloer.jpg");
+        // String [] regels = Laden.laadTextFile("omgevingen/vloeren"+level+".txt").split("\n");
+        // int teller = 0;
+        // while(teller < regels.length){
+            // int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" ", ""));
+            // int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" ", ""));
+            // int b = Integer.parseInt(regels[teller].split(",")[2].replaceAll(" ", ""));
+            // vloeren.add(new Obstakel(x,y,b,10,p)); 
+            // teller ++;
+        // }
+    // }
+    // public void maakVijanden(int level){
+        // if(vijanden == null){
+            // vijanden = new ArrayList<Vijand>();
+        // } else {
+            // tekenaar.verwijderLijst(vijanden);
+            // beweeg.verwijderLijst(vijanden);
+            // vijanden.clear();
+        // }
+        // Image p = Laden.laadPlaatje("plaatjes/vijand"+level+".png");
+        // String [] regels = Laden.laadTextFile("omgevingen/vijanden"+level+".txt").split("\n");
+        // int teller = 0;
+        // while(teller < regels.length){
+            // int x = Integer.parseInt(regels[teller].split(",")[0].replaceAll(" ", ""));
+            // int y = Integer.parseInt(regels[teller].split(",")[1].replaceAll(" ", ""));
+            // int b = Integer.parseInt(regels[teller].split(",")[2].replaceAll(" ", ""));
+            // int h = Integer.parseInt(regels[teller].split(",")[3].replaceAll(" ", ""));
+            // int vx = Integer.parseInt(regels[teller].split(",")[4].replaceAll(" ", ""));
+            // int vy = Integer.parseInt(regels[teller].split(",")[5].replaceAll(" ", ""));
+            // Vijand v = new Vijand(x,y,b,h,vx,vy,p);
+            // v.registreer(this);
+            // vijanden.add(v);
+            // teller ++;
+        // }
+    // }
       public void maakTafels(){
         tafels = new ArrayList<Tafel>();
         tafels.add(new Tafel(100, 100, 30, 30,Laden.laadPlaatje("plaatjes/tafel.png")));
@@ -230,8 +358,8 @@ public class Omgeving {
     //sleutel maken
     public void maakSleutel(){
         Image s = Laden.laadPlaatje("plaatjes/sleutel.png");
-        sleutel = new Sleutel(0, 500, 60, 60, s);
-        sleutelOpgepakt = new Sleutel(20, 20, 30, 30, s);
+        sleutel = new Sleutel(0, 500, s);
+        sleutelOpgepakt = new Sleutel(20, 20, s);
     }
     
         public void maakGijs(){
